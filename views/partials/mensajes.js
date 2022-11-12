@@ -1,5 +1,4 @@
 const socket = io.connect()
-import normalizr from ('normalizr')
 
 const ingresoMensaje = document.getElementById("ingresoMensaje");
 const botonEnviar = document.getElementById("botonEnviar");
