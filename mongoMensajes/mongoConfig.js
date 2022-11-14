@@ -1,6 +1,6 @@
 const config ={
     mongo :{
-        url : "mongodb://localhost:27017/mensajes",
+        url : "mongodb+srv://CarlosCoder:coder123@cluster0.tl5cqne.mongodb.net/test",
         options : {
             useNewUrlParser: true,
             useUnifiedTopology: true

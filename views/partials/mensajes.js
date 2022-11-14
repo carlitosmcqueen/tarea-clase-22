@@ -3,9 +3,15 @@ const socket = io.connect()
 const ingresoMensaje = document.getElementById("ingresoMensaje");
 const botonEnviar = document.getElementById("botonEnviar");
 
+socket.on('mensajes', (msj) => {
+    const denormMsjs = normalizr.denormalize(msj.result, fileSchema, msj.entities);
+    console.log(denormMsjs);
+    renderMsj(denormMsjs);
+    renderComp(msj, denormMsjs);
+})
+
 botonEnviar.addEventListener('click', (e) => {
     console.log("se envio mensaje")
-    e.preventDefault()
     const mensaje = {
         author: {
             id: ingresoMensaje.children.id.value,
@@ -17,7 +23,8 @@ botonEnviar.addEventListener('click', (e) => {
         },
         text: ingresoMensaje.children.text.value
     }
-    socket.emit('enviarMensaje', mensaje);
+    socket.emit('mensajes', mensaje);
+    return false
 })
 
 //normalizr esquemas
@@ -26,20 +33,15 @@ const msjSchema = new normalizr.schema.Entity('mensajes', { author: authorsSchem
 const fileSchema = [msjSchema]
 
 const renderMsj = (msj) => {
-    msj.map(element => {
-        const html = ` <article>
-        <span class="id">${element._doc.author.id}</span><span class="time">[${element._doc.author.timestamp}]:</span><span clas="text">${element._doc.text}</span><img src="${element._doc.author.avatar}" alt="avatar" class="avatar">
-                        </article>`;
-        const mensajes = document.getElementById("mensajes");
-        mensajes.innerHTML += html;
-    })
+    const html = msj.map(element => ` <article>
+    <span class="id">${element._doc.author.id}</span><span class="time">[${element._doc.author.timestamp}]:</span><span clas="text">${element._doc.text}</span><img src="${element._doc.author.avatar}" alt="avatar" class="avatar">
+                    </article>`).join(" ")
+    document.getElementById("mensajes").innerHTML = html;
+
+    return false
 }
 
-socket.on('mensajes', (msj) => {
-    const denormMsjs = normalizr.denormalize(msj.result, fileSchema, msj.entities);
-    renderMsj(denormMsjs);
-    renderComp(msj, denormMsjs);
-})
+
 
 const renderComp = (msj, denormMsjs) => {
     const comp = document.getElementById("compresion");

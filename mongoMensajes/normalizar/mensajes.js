@@ -2,6 +2,7 @@ import config from '../mongoConfig.js';
 import mongoose from 'mongoose';
 import { normalizeMsj } from './normalizr.js';
 
+
 try {
     mongoose.connect(config.mongo.url, config.mongo.options)
     console.log("se conecto MongoMensajes");
@@ -23,7 +24,6 @@ const mongooseSchema = new mongoose.Schema({
 });
 
 const msjModel = mongoose.model('mensajes', mongooseSchema);
-
 
 
 const saveMsjs = async (msj) => {
