@@ -63,9 +63,9 @@ app.get("/productos-test",async(req,res)=>{
 io.on("connection", async (socket)=>{
     console.log("se pudo conectar")
     socket.emit('mensajes', await getMsjs());
-    socket.on("mensajes", async(msj)=>{
+    socket.on("mensajes", async (msj)=>{
         await saveMsjs(msj)
-        io.sockets.emit("mensajes",msj)
+        io.sockets.emit("mensajes",await getMsjs())
 
     })
     
