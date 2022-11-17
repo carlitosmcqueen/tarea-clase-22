@@ -1,4 +1,4 @@
-import config from '../mongoConfig.js';
+import config from '../../mongoConfig.js';
 import mongoose from 'mongoose';
 import { normalizeMsj } from './normalizr.js';
 

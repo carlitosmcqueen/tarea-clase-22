@@ -50,3 +50,4 @@ const renderComp = (msj, denormMsjs) => {
     const compresion = ((msjLength - denormMsjsLength) / msjLength * 100).toFixed(2);
     comp.innerHTML = `(Compresion: ${compresion}%)`;
 }
+
