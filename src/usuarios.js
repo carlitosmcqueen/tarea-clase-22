@@ -5,6 +5,11 @@ class Usuario extends ContenedorMongo {
         super("usuarios", { user: String, password: String });
     }
 
+    async findUserByName(username) {
+        const user = await this.db.find({ username });
+        return user;
+    }
+    
     async findUser(username, password) {
         try {
             const result = await this.db.find({ username, password });
