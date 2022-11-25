@@ -1,16 +1,22 @@
 import express from "express";
 import session from "express-session";
+import passport from 'passport';
 import handlebars from "express-handlebars";
 import MongoStore from 'connect-mongo';
 import bcrypt from 'bcrypt';
-import passport from 'passport';
+import bodyParser from 'body-parser';
 
-const app = express();
-
+//USUARIOS
+import Usuario from "./src/usuarios.js";
+const usuarios = new Usuario();
+import isLoggedIn from "./middlewares/log.js"
 
 //PASSPORT 
 import { Strategy as LocalStrategy } from 'passport-local'
 import UsuariosPass from "./src/contenedores/contenedorMongoUsuarios.js"
+
+const app = express();
+
 
 passport.use("singup",
 new LocalStrategy({passReqToCallback: true},(req,username,password,done)=>{
@@ -55,9 +61,6 @@ passport.deserializeUser((id, done) => {
 });
 
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 
 
 
@@ -86,15 +89,15 @@ const io = new Server(httpServer);
 import randomProductos from "./faker/fakerProductos.js";
 import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
 
-//USUARIOS
-import Usuario from "./src/usuarios.js";
-const usuarios = new Usuario();
-import isLoggedIn from "./middlewares/log.js"
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("views"));
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 const hbs= handlebars.engine({
     extname: "hbs",
@@ -108,7 +111,7 @@ app.set("view engine","hbs")
 
 //----------------VISTAS---------------
 
-app.get("/",(req,res)=>{
+app.get("/", (req,res)=>{
     try{
         if (req.session.user){
         res.render("main",{layout:"mensajes", user : req.session.user})
@@ -126,27 +129,32 @@ app.get("/login",isLoggedIn, (req,res)=>{
     res.render("main",{layout:"login"})
 
 })
-app.post('/login', async (req, res) => {
-    // const { user, password } = req.body;
-    // const verificacion = await usuarios.findUser(user, password)
-    // if (verificacion) {
-    //   req.session.user = user;
-    //   res.redirect('/')
-    // } else { res.send("Usuario o contraseña incorrecto/s vuelva a intentarlo <a href=/login>Volver al login</a>") }
 
-    passport.authenticate("login",{failureRedirect:"/faillogin"})
-
+app.post(
+    "/login",
+    passport.authenticate("login", { failureRedirect: "/loginError" }),
+    (req, res) => {
+        const { username } = req.body;
+        req.session.user = username;
+        res.redirect("/");
+    }
+);
+app.get("/loginError", (req, res) => {
+    res.render("main",{layout:"loginError"});
 })
+
 
 app.get('/register', (req, res) => {
     res.render('main', {layout: 'register'})
 })
   
-app.post('/register', (req, res) => {
-    const { user, password } = req.body;
-    usuarios.save({ user, password });
-    req.session.user = user;
+app.post('/register', passport.authenticate('singup', { failureRedirect: "/registerError" }), (req, res) => {
+    console.log("se registro")
     res.redirect('/');
+});
+
+app.get("/registerError",(req, res)=>{
+    res.render("main",{layout:"registerError"})
 })
   
 app.get('/logout' ,(req, res) => {
