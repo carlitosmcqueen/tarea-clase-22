@@ -8,4 +8,5 @@ const UsuariosPass = mongoose.model("users", {
     password: String,
 });
 
+
 export default UsuariosPass;

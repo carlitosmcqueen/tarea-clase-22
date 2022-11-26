@@ -23,7 +23,7 @@ new LocalStrategy({passReqToCallback: true},(req,username,password,done)=>{
     UsuariosPass.findOne({username},(err,user)=>{
         if(user) return done(null,false)
         UsuariosPass.create(
-            {username,password: PassHashed(password)},
+            {username, password: PassHashed(password)},
             (err,user)=>{
                 if (err) return done(err)
                 return done(null,user)
@@ -64,7 +64,6 @@ passport.deserializeUser((id, done) => {
 
 
 
-
 // SESSION
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 app.use(session({
@@ -89,14 +88,14 @@ const io = new Server(httpServer);
 import randomProductos from "./faker/fakerProductos.js";
 import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
 
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("views"));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 
 const hbs= handlebars.engine({
@@ -131,8 +130,7 @@ app.get("/login",isLoggedIn, (req,res)=>{
 })
 
 app.post(
-    "/login",
-    passport.authenticate("login", { failureRedirect: "/loginError" }),
+    "/login",passport.authenticate("login", { failureRedirect: "/loginError" }),
     (req, res) => {
         const { username } = req.body;
         req.session.user = username;
