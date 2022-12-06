@@ -6,12 +6,29 @@ import MongoStore from 'connect-mongo';
 import bcrypt from 'bcrypt';
 import bodyParser from 'body-parser';
 
-//USUARIOS
+//tarea 
+import {fork} from "child_process"
+
+import Yargs from "yargs/yargs";
+const yargs = Yargs(process.argv.slice(2))
+
+const port = yargs.alias({
+    p:"puerto",
+}).default(
+    {puerto:8080}
+).argv
+
+
+
+
+
 import Usuario from "./src/usuarios.js";
 const usuarios = new Usuario();
 import isLoggedIn from "./middlewares/log.js"
 
-//PASSPORT 
+
+
+
 import { Strategy as LocalStrategy } from 'passport-local'
 import UsuariosPass from "./src/contenedores/contenedorMongoUsuarios.js"
 
@@ -63,8 +80,6 @@ passport.deserializeUser((id, done) => {
 
 
 
-
-// SESSION
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 app.use(session({
       secret: "32m32e90me2393",
@@ -164,6 +179,19 @@ app.get("/productos-test",isLoggedIn ,async(req,res)=>{
     res.render("main",{layout:"productos-test"})
 })
 
+
+//TAREA
+app.get("/info",(req, res)=>{
+    res.render("main",{layout:"info",
+    args: JSON.stringify(process.argv,null),
+    plataform:process.platform,
+    version:process.version,
+    memory:process.memoryUsage().rss,
+    path: process.cwd(),
+
+})
+})
+
 io.on("connection", async (socket)=>{
     console.log("se pudo conectar")
     socket.emit('mensajes', await getMsjs());
@@ -175,8 +203,38 @@ io.on("connection", async (socket)=>{
     
     //esto para productos al azar
     socket.emit('randomProducts', randomProductos());
-
 })
+
+
+const CON_CHILD_PROCESS_FORK = !false;
+if (CON_CHILD_PROCESS_FORK) {
+  let calculo = fork("./random.js");
+
+  var taskId = 0;
+  var tasks = {};
+
+  function addTask(data, callback) {
+    var id = taskId++;
+    calculo.send({ id: id, data: data });
+    tasks[id] = callback;
+  }
+
+  calculo.on("message", function (message) {
+    tasks[message.id](message);
+  });
+
+  app.get("/randoms", async (req, res) => {
+    addTask(req.query.cant || 1000, (randoms) => {
+      res.json(randoms);
+    });
+  });
+
+} else {
+  app.get("/randoms", async (req, res) => {
+    res.send('<h2>por si no funca</h2>');
+  });
+}
+
 
 httpServer.listen(8080, () => {
     console.log(`HBS iniciado`)
