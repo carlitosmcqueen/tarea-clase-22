@@ -236,7 +236,7 @@ if (CON_CHILD_PROCESS_FORK) {
 }
 
 
-httpServer.listen(8080, () => {
-    console.log(`HBS iniciado`)
+httpServer.listen(port.port, () => {
+    console.log("HBS iniciado en el puerto "+ port.puerto)
 })
 
