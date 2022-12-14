@@ -1,0 +1,20 @@
+PUERTO = -p 
+MODO = -m  
+
+NODEMON
+
+node start index.js (modo fork predeterminado)
+node start index.js -m cluster (para el modo cluster) 
+
+FOREVER 
+
+forever start index.js
+forever -w start index.js (modo watch)
+forever start index.js -m cluster (modo cluster) 
+
+
+PM2
+
+pm2 start index.js --name="fork" (modo fork)
+pm2 start index.js -i [cantidad que queremos] (modo cluster) 
+pm2 start index.js --name="fork" -- --port=8081

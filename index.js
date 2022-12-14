@@ -237,7 +237,6 @@ if (CON_CHILD_PROCESS_FORK) {
 }
 
 
-const cpu = cpus().length
 
 if (port.m=="cluster"){
     if(cluster.isPrimary){
