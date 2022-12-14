@@ -5,8 +5,9 @@ import handlebars from "express-handlebars";
 import MongoStore from 'connect-mongo';
 import bcrypt from 'bcrypt';
 import bodyParser from 'body-parser';
+import { cpus } from "os";
+import cluster from 'cluster';
 
-//tarea 
 import {fork} from "child_process"
 
 import Yargs from "yargs/yargs";
@@ -14,18 +15,16 @@ const yargs = Yargs(process.argv.slice(2))
 
 const port = yargs.alias({
     p:"puerto",
+    m:"modo"
 }).default(
-    {puerto:8080}
+    {puerto:8080,modo:"fork"}
 ).argv
-
-
 
 
 
 import Usuario from "./src/usuarios.js";
 const usuarios = new Usuario();
 import isLoggedIn from "./middlewares/log.js"
-
 
 
 
@@ -180,7 +179,7 @@ app.get("/productos-test",isLoggedIn ,async(req,res)=>{
 })
 
 
-//TAREA
+
 app.get("/info",(req, res)=>{
     res.render("main",{layout:"info",
     args: JSON.stringify(process.argv,null),
@@ -188,6 +187,8 @@ app.get("/info",(req, res)=>{
     version:process.version,
     memory:process.memoryUsage().rss,
     path: process.cwd(),
+    // le agrego para que muestre el cpu
+    cpus: cpus().length
 
 })
 })
@@ -201,7 +202,7 @@ io.on("connection", async (socket)=>{
 
     })
     
-    //esto para productos al azar
+    
     socket.emit('randomProducts', randomProductos());
 })
 
@@ -236,7 +237,36 @@ if (CON_CHILD_PROCESS_FORK) {
 }
 
 
-httpServer.listen(port.port, () => {
-    console.log("HBS iniciado en el puerto "+ port.puerto)
-})
+const cpu = cpus().length
+
+if (port.m=="cluster"){
+    if(cluster.isPrimary){
+        console.log(`El proceso Primario : ${process.pid} funciona`)
+
+        for(let i=0;i<3;i++){
+            cluster.fork()
+        }
+        cluster.on("exit",(worker,code,signal) =>{
+            console.log(`este worker : ${worker.process.pid} murio`)
+        })
+    }else{
+        httpServer.listen(port.puerto,()=>{
+            console.log(`el servidor esta siendo escuchado en el puerto ${port.puerto} en modo ${port.m} con el worker ${process.pid}`)
+        })
+
+    }
+    
+}else{
+    httpServer.listen(port.puerto,()=>{
+        console.log(`el servidor esta siendo escuchado en el puerto ${port.puerto} en modo ${port.m}`)
+    })
+}
+
+
+
+
+//por las dudas me guardo esto
+// httpServer.listen(port.port, () => {
+//     console.log("HBS iniciado en el puerto "+ port.puerto)
+// })
 
