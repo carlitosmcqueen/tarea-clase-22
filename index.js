@@ -8,6 +8,11 @@ import bodyParser from 'body-parser';
 import { cpus } from "os";
 import cluster from 'cluster';
 
+//logger
+import logger from "./logs.js"
+//compression
+import compression from "compression"
+
 import {fork} from "child_process"
 
 import Yargs from "yargs/yargs";
@@ -123,6 +128,13 @@ app.set("view engine","hbs")
 
 
 //----------------VISTAS---------------
+// aca cae donde todas las que no tiene link 
+app.use((req, res, next) => {
+    logger.info(`request ${req.method} at  ${req.url}`)
+    next()
+})
+
+
 
 app.get("/", (req,res)=>{
     try{
@@ -174,24 +186,51 @@ app.get('/logout' ,(req, res) => {
 })
   
   
-app.get("/productos-test",isLoggedIn ,async(req,res)=>{
+app.get("/productos-test",isLoggedIn ,async (req,res)=>{
     res.render("main",{layout:"productos-test"})
 })
 
-
-
+const hola = "hola".repeat(10000)
+// -------------------- Aca la diferencia con Compression ---------------
 app.get("/info",(req, res)=>{
+    //res.send(hola)
+     res.render("main",{layout:"info",
+     args: JSON.stringify(process.argv,null),
+     plataform:process.platform,
+     version:process.version,
+     memory:process.memoryUsage().rss,
+     path: process.cwd(),
+     cpus: cpus().length
+
+ })
+})
+
+app.get("/infoCompression", compression(), (req, res)=>{
+    //res.send(hola)
+
     res.render("main",{layout:"info",
     args: JSON.stringify(process.argv,null),
     plataform:process.platform,
     version:process.version,
     memory:process.memoryUsage().rss,
     path: process.cwd(),
-    // le agrego para que muestre el cpu
     cpus: cpus().length
 
 })
 })
+
+// ---------- Esto con compresion repetido 10000 veces da una diferencia de 480 b a 1.5 kb
+
+
+
+
+//todo lo que no cae arriba cae aca 
+app.all("*",(req,res)=>{
+    logger.warn(`Failed Requist ${req.method} at ${req.url}`)
+    res.send({error:true})
+})
+
+
 
 io.on("connection", async (socket)=>{
     console.log("se pudo conectar")
@@ -201,8 +240,6 @@ io.on("connection", async (socket)=>{
         io.sockets.emit("mensajes",await getMsjs())
 
     })
-    
-    
     socket.emit('randomProducts', randomProductos());
 })
 
@@ -240,32 +277,24 @@ if (CON_CHILD_PROCESS_FORK) {
 
 if (port.m=="cluster"){
     if(cluster.isPrimary){
-        console.log(`El proceso Primario : ${process.pid} funciona`)
+        logger.info(`El proceso Primario : ${process.pid} funciona`)
 
         for(let i=0;i<3;i++){
             cluster.fork()
         }
         cluster.on("exit",(worker,code,signal) =>{
-            console.log(`este worker : ${worker.process.pid} murio`)
+            logger.info(`este worker : ${worker.process.pid} murio`)
         })
     }else{
         httpServer.listen(port.puerto,()=>{
-            console.log(`el servidor esta siendo escuchado en el puerto ${port.puerto} en modo ${port.m} con el worker ${process.pid}`)
+            logger.info(`el servidor esta siendo escuchado en el puerto ${port.puerto} en modo ${port.m} con el worker ${process.pid}`)
         })
 
     }
     
 }else{
     httpServer.listen(port.puerto,()=>{
-        console.log(`el servidor esta siendo escuchado en el puerto ${port.puerto} en modo ${port.m}`)
+        logger.info(`el servidor esta siendo escuchado en el puerto ${port.puerto} en modo ${port.m}`)
     })
 }
-
-
-
-
-//por las dudas me guardo esto
-// httpServer.listen(port.port, () => {
-//     console.log("HBS iniciado en el puerto "+ port.puerto)
-// })
 
