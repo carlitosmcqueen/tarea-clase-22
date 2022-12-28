@@ -190,36 +190,37 @@ app.get("/productos-test",isLoggedIn ,async (req,res)=>{
     res.render("main",{layout:"productos-test"})
 })
 
-const hola = "hola".repeat(10000)
-// -------------------- Aca la diferencia con Compression ---------------
-app.get("/info",(req, res)=>{
-    //res.send(hola)
-     res.render("main",{layout:"info",
-     args: JSON.stringify(process.argv,null),
-     plataform:process.platform,
-     version:process.version,
-     memory:process.memoryUsage().rss,
-     path: process.cwd(),
-     cpus: cpus().length
 
- })
-})
+// ----------------------------------------------------- No se si deberia borrarlo o lo vamos a usar despues por las dudas lo dejo comentado   -------------------------------
+// const hola = "hola".repeat(10000)
+// // -------------------- Aca la diferencia con Compression ---------------
+// app.get("/info",(req, res)=>{
+//     //res.send(hola)
+//      res.render("main",{layout:"info",
+//      args: JSON.stringify(process.argv,null),
+//      plataform:process.platform,
+//      version:process.version,
+//      memory:process.memoryUsage().rss,
+//      path: process.cwd(),
+//      cpus: cpus().length
 
-app.get("/infoCompression", compression(), (req, res)=>{
-    //res.send(hola)
+//  })
+// })
 
-    res.render("main",{layout:"info",
-    args: JSON.stringify(process.argv,null),
-    plataform:process.platform,
-    version:process.version,
-    memory:process.memoryUsage().rss,
-    path: process.cwd(),
-    cpus: cpus().length
+// app.get("/infoCompression", compression(), (req, res)=>{
+//     //res.send(hola)
+//     res.render("main",{layout:"info",
+//     args: JSON.stringify(process.argv,null),
+//     plataform:process.platform,
+//     version:process.version,
+//     memory:process.memoryUsage().rss,
+//     path: process.cwd(),
+//     cpus: cpus().length
 
-})
-})
+// })
+// })
 
-// ---------- Esto con compresion repetido 10000 veces da una diferencia de 480 b a 1.5 kb
+// // ---------- Esto con compresion repetido 10000 veces da una diferencia de 480 b a 1.5 kb
 
 
 
@@ -273,28 +274,11 @@ if (CON_CHILD_PROCESS_FORK) {
   });
 }
 
+// aca borre lo que tenia antes y dejo este que creo q es lo que pide la consigna
 
+const PORT = process.env.PORT || 8080
+const server = app.listen(PORT, () => {
+    console.log(`Servidor express escuchando en el puerto ${PORT}`)
+})
 
-if (port.m=="cluster"){
-    if(cluster.isPrimary){
-        logger.info(`El proceso Primario : ${process.pid} funciona`)
-
-        for(let i=0;i<3;i++){
-            cluster.fork()
-        }
-        cluster.on("exit",(worker,code,signal) =>{
-            logger.info(`este worker : ${worker.process.pid} murio`)
-        })
-    }else{
-        httpServer.listen(port.puerto,()=>{
-            logger.info(`el servidor esta siendo escuchado en el puerto ${port.puerto} en modo ${port.m} con el worker ${process.pid}`)
-        })
-
-    }
-    
-}else{
-    httpServer.listen(port.puerto,()=>{
-        logger.info(`el servidor esta siendo escuchado en el puerto ${port.puerto} en modo ${port.m}`)
-    })
-}
-
+server.on('error', error => console.log(`Error en servidor ${error}`))
