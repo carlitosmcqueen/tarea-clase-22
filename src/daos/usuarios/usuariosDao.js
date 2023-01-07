@@ -1,6 +1,6 @@
-import ContenedorMongo from "./contenedores/contenedorMongo.js"
+import ContenedorMongo from "../../contenedores/contenedorMongo.js"
 
-class Usuario extends ContenedorMongo {
+class UsuarioDaoMongo extends ContenedorMongo {
     constructor() {
         super("usuarios", { user: String, password: String });
     }
@@ -25,4 +25,4 @@ class Usuario extends ContenedorMongo {
     }
 }
 
-export default Usuario;
+export default UsuarioDaoMongo;

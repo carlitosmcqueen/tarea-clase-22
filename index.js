@@ -30,8 +30,9 @@ const port = yargs.alias({
 
 
 
-import Usuario from "./src/usuarios.js";
-const usuarios = new Usuario();
+import UsuarioDaoMongo from "./src/daos/usuarios/usuariosDao.js";
+const usuarios = new UsuarioDaoMongo();
+
 import isLoggedIn from "./middlewares/log.js"
 
 
@@ -135,6 +136,9 @@ app.set("view engine","hbs")
 // aca cae donde todas las que no tiene link 
 
 import { productosRouter } from "./src/routes/productos.js";
+import { usuariosRouter } from "./src/routes/usuarios.js";
+app.use("/",usuariosRouter)
+app.use("/productos",productosRouter)
 
 app.use((req, res, next) => {
     logger.info(`request ${req.method} at  ${req.url}`)
