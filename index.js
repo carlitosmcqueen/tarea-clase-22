@@ -8,6 +8,7 @@ import bodyParser from 'body-parser';
 import { cpus } from "os";
 import cluster from 'cluster';
 
+
 //logger
 import logger from "./logs.js"
 //compression
@@ -16,6 +17,8 @@ import compression from "compression"
 import {fork} from "child_process"
 
 import Yargs from "yargs/yargs";
+
+
 const yargs = Yargs(process.argv.slice(2))
 
 const port = yargs.alias({
@@ -37,6 +40,7 @@ import { Strategy as LocalStrategy } from 'passport-local'
 import UsuariosPass from "./src/contenedores/contenedorMongoUsuarios.js"
 
 const app = express();
+
 
 
 passport.use("singup",
@@ -129,6 +133,9 @@ app.set("view engine","hbs")
 
 //----------------VISTAS---------------
 // aca cae donde todas las que no tiene link 
+
+import { productosRouter } from "./src/routes/productos.js";
+
 app.use((req, res, next) => {
     logger.info(`request ${req.method} at  ${req.url}`)
     next()
