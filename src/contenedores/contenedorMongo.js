@@ -8,6 +8,7 @@ class ContenedorMongo {
     constructor(coleccion,esquema){
         this.db = mongoose.model(coleccion,esquema)
     }
+
     async save(data) {
         try {
             const result = await this.db.create(data);

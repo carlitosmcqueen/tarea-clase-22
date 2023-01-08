@@ -5,6 +5,7 @@ const {productosDao} = await daos
 
 const router = Router()
 const app = express();
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
@@ -12,7 +13,6 @@ app.use(express.json())
 router.get("/", async (req, res) => {
     try {
         const data = await productosDao.getAll()
-        console.log("pio")
         res.send(data);
     } catch (err) {
         res.status(404).send(err);
@@ -33,7 +33,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
     try {
         const data = req.body;
-        await DB.save(data);
+        await productosDao.save(data);
         res.send(data);
     } catch (err) {
         res.status(404).send(err);
