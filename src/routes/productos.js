@@ -18,6 +18,9 @@ router.get("/", async (req, res) => {
         res.status(404).send(err);
     }
 });
+router.get("/prueba",(req,res) => {
+    res.send("prueba")
+})
 
 router.get("/:id", async (req, res) => {
     try {
