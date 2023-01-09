@@ -20,7 +20,8 @@ new LocalStrategy({passReqToCallback: true},(req,username,password,done)=>{
             (err,user)=>{
                 if (err) return done(err)
                 return done(null,user)
-            }
+            },
+
         )
     })
 })

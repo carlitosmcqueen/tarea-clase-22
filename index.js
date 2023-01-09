@@ -30,9 +30,6 @@ const port = yargs.alias({
 
 const app = express();
 
-import UsuarioDaoMongo from "./src/daos/usuarios/usuariosDao.js";
-const usuarios = new UsuarioDaoMongo();
-
 
 
 //-------------SERVER-------------
@@ -78,10 +75,11 @@ app.set("view engine","hbs")
 
 import { productosRouter } from "./src/routes/productos.js";
 import { usuariosRouter } from "./src/routes/usuarios.js";
+import { carritoRouter } from "./src/routes/carrito.js";
 
 app.use("/",usuariosRouter)
 app.use("/productos",productosRouter)
-
+app.use("/carrito",carritoRouter)
 app.use((req, res, next) => {
     logger.info(`request ${req.method} at  ${req.url}`)
     next()
@@ -162,7 +160,7 @@ if (CON_CHILD_PROCESS_FORK) {
 // aca borre lo que tenia antes y dejo este que creo q es lo que pide la consigna
 
 const PORT = process.env.PORT || 8080
-const server = app.listen(PORT, () => {
+const server = httpServer.listen(PORT, () => {
     console.log(`Servidor express escuchando en el puerto ${PORT}`)
 })
 

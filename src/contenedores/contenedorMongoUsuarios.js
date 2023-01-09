@@ -6,6 +6,7 @@ await mongoose.connect(config.mongo.url, config.mongo.options)
 const UsuariosPass = mongoose.model("users", {
     username: String,
     password: String,
+    dato:String
 });
 
 
