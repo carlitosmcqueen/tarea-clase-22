@@ -2,7 +2,7 @@ import express from "express"
 import {Router} from "express"
 import daos from "../daos/index.js"
 
-const {carritoDao,productosDao} = await daos( )
+const {carritoDao,productosDao} = await daos
 
 const router = Router()
 const app = express()

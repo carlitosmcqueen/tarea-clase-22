@@ -503,3 +503,6 @@
 [2023-01-09T02:40:48.318] [WARN] default - Failed Requist GET at /22
 [2023-01-09T02:40:48.322] [WARN] default - Failed Requist GET at /ss
 [2023-01-09T02:40:48.327] [WARN] default - Failed Requist GET at /5
+[2023-01-09T02:58:38.217] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-01-09T02:58:39.723] [WARN] default - Failed Requist GET at /assets/images/icons.svg
+[2023-01-09T02:58:39.780] [WARN] default - Failed Requist GET at /favicon.ico
