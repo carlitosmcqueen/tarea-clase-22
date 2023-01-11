@@ -25,9 +25,6 @@ const port = yargs.alias({
 ).argv
 
 
-
-
-
 const app = express();
 
 
@@ -76,10 +73,14 @@ app.set("view engine","hbs")
 import { productosRouter } from "./src/routes/productos.js";
 import { usuariosRouter } from "./src/routes/usuarios.js";
 import { carritoRouter } from "./src/routes/carrito.js";
+import {compraRouter} from "./src/routes/compra.js";
 
 app.use("/",usuariosRouter)
 app.use("/productos",productosRouter)
 app.use("/carrito",carritoRouter)
+app.use("/compra",compraRouter)
+
+
 app.use((req, res, next) => {
     logger.info(`request ${req.method} at  ${req.url}`)
     next()
@@ -91,6 +92,7 @@ app.get("/", (req,res)=>{
     try{
         if (req.session.user){
         res.render("main",{layout:"mensajes", user : req.session.user})
+        console.log(req.session)
     }else{
         res.redirect("/login")
     }

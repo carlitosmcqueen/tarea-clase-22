@@ -2,7 +2,7 @@ import config from '../../mongoConfig.js';
 import mongoose from 'mongoose';
 import { normalizeMsj } from './normalizr.js';
 import logger from "../../logs.js"
-
+mongoose.set('strictQuery', true);
 
 try {
     mongoose.connect(config.mongo.url, config.mongo.options)

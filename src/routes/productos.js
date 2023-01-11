@@ -1,26 +1,28 @@
 import express from "express";
 import { Router } from "express";
 import daos from "../daos/index.js";
-const {productosDao} = await daos()
+import isLoggedIn from "../../middlewares/log.js";
+
+const {productosDao} = await daos
 
 const router = Router()
 const app = express();
 
-app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-
-router.get("/", async (req, res) => {
+router.get("/",isLoggedIn, async (req, res) => {
     try {
         const data = await productosDao.getAll()
-        res.send(data);
+        //res.send(data);
+        console.log(data);
+        res.render("main",{layout:"productos",data:data})
+
     } catch (err) {
         res.status(404).send(err);
     }
 });
-router.get("/prueba",(req,res) => {
-    res.send("prueba")
-})
+
 
 router.get("/:id", async (req, res) => {
     try {

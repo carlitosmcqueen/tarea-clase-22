@@ -49,8 +49,7 @@ router.post("/:id/productos/:id_producto", async (req, res) => {
             id_producto
         } = req.params;
         const productoCarrito = await productosDao.getById(id_producto);
-        await carritoDao.addProduct(id, productoCarrito);
-        res.send("se agrego");
+        await carritoDao.addProduct(id, productoCarrito)        
     } catch (err) {
         res.status(404).send(err);
     }
@@ -80,6 +79,9 @@ router.delete("/:id", async (req, res) => {
     } catch (err) {
         res.status(404).send(err.msg);
     }
-});
+})
+
+
+
 
 export { router as carritoRouter}

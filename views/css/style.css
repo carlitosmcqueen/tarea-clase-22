@@ -65,7 +65,7 @@
     min-height: 100vh;
   }
   a {
-    color: #eee;
+    color: rgb(0, 0, 0);
     outline: 0;
     text-decoration: none;
   }
@@ -109,7 +109,7 @@
     flex: 1;
   }
   .login {
-    color: #eee;
+    color: rgb(10, 10, 10);
   }
   .login label,
   .login input[type="text"],
@@ -138,11 +138,11 @@
   .login input[type="password"]:hover,
   .login input[type="text"]:focus,
   .login input[type="text"]:hover {
-    background-color: #434a52;
+    background-color: #ffffff;
   }
   .login input[type="submit"] {
     background-color: #ea4c88;
-    color: #eee;
+    color: rgb(0, 0, 0);
     font-weight: 700;
     text-transform: uppercase;
   }

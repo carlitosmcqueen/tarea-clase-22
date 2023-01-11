@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 import config from "../../mongoConfig.js";
 
+
 await mongoose.connect(config.mongo.url, config.mongo.options)
+
 
 class ContenedorMongo {
     
@@ -20,7 +22,7 @@ class ContenedorMongo {
 
     async getAll() {
         try {
-            const result = await this.db.find({});
+            const result = await this.db.find({}).lean()
             return result;
         } catch (error) {
             console.log(error);
@@ -29,16 +31,15 @@ class ContenedorMongo {
 
     async getById(id) {
         try {
-            const result = await this.db.findOne({ _id: id });
+            const result = await this.db.findOne({ _id: id }).lean()
             return result;
         } catch (error) {
             console.log(error);
         }
     }
-
     async updateById(id, data) {
         try {
-            const result = await this.db.updateOne({ _id: id }, { $set: data });
+            const result = await this.db.updateOne({ _id: id }, { $set: data }).lean()
             return result;
         } catch (error) {
             console.log(error);
@@ -47,14 +48,14 @@ class ContenedorMongo {
 
     async deleteById(id) {
         try {
-            const result = await this.db.deleteOne({ _id: id });
+            const result = await this.db.deleteOne({ _id: id }).lean()
             return result;
         } catch (error) {
             console.log(error);
         }
     }
     async deleteAll() {
-        await this.db.deleteMany({});
+        await this.db.deleteMany({}).lean()
     }
     
 }

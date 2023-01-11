@@ -6,7 +6,7 @@ class carritoDaoMongo extends ContenedorMongo{
     }
     async createCart() {
         try {
-            const cart = await this.create({ productos: [] });
+            const cart = await this.db.create({ productos: [] })
             return cart;
         } catch (err) {
             console.log(err);
@@ -23,3 +23,6 @@ class carritoDaoMongo extends ContenedorMongo{
     }
 }
 export default carritoDaoMongo
+
+
+
