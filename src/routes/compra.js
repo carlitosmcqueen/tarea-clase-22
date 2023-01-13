@@ -12,6 +12,7 @@ app.use(express.json())
 router.get('/',async (req,res) => {
     try{
         const data = await compraDao.getAll()
+        console.log(data)
         res.send(data);
     }catch(err) {
         res.status(404).send(err)

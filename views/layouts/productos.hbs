@@ -58,11 +58,10 @@
       </nav>
     </header>
 
-    <!-- Begin page content -->
     <main role="main" class="container">
       <h1 class="mt-5">productos</h1>
       {{#each data}}
-      <form id="productos-caja" action="http://localhost:8080/carrito/63bddf95156f705b8eabb71f/productos/{{this._id}}" method="post">
+      <form id="carrito" action="http://localhost:8080/carrito/63bddf95156f705b8eabb71f/productos/{{this._id}}" method="POST">
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{this.thumbnail}}" alt="Card image cap">
         <div class="card-body">
@@ -72,7 +71,6 @@
 
         </div>
       </div>
-
       </form>
       {{/each}}
     </main>

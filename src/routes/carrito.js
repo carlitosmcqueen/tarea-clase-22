@@ -8,12 +8,14 @@ const router = Router()
 const app = express()
 
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }))
 
 router.get("/", async (req, res) => {
     try {
         const data = await carritoDao.getAll()
-        res.send(data);
+        console.log(data)
+        res.render("main",{layout:"carrito",data:data});
+        
     } catch (err) {
         res.status(404).send(err);
     }
@@ -41,6 +43,7 @@ router.post("/", async (req, res) => {
         res.status(404).send(err);
     }
 });
+
 
 router.post("/:id/productos/:id_producto", async (req, res) => {
     try {

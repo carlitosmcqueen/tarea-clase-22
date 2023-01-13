@@ -10,13 +10,13 @@ class comprasDaoMongo extends ContenedorMongo{
     }
 
     async crearCompra(){
-        const compra = await this.db.create({comprardor:{}})
+        const compra = await this.db.create({comprardor:{}}).lean()
         return compra
     }
 
     async llenarCompra(id,carrito){
         try{
-            const result = await this.db.updateOne({_id:id},{$push:{carrito:carrito}})
+            const result = await this.db.updateOne({_id:id},{$push:{carrito:carrito}}).lean()
             return result
         }catch(e){
             console.log(e) 

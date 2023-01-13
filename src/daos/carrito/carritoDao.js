@@ -2,11 +2,11 @@ import ContenedorMongo from "../../contenedores/contenedorMongo.js"
 
 class carritoDaoMongo extends ContenedorMongo{
     constructor(){
-        super("carrito",{productos:Array})
+        super("carrito",{usuario:String,productos:Array})
     }
     async createCart() {
         try {
-            const cart = await this.db.create({ productos: [] })
+            const cart = await this.db.create({usuario},{ productos: [] }).lean()
             return cart;
         } catch (err) {
             console.log(err);
@@ -15,7 +15,7 @@ class carritoDaoMongo extends ContenedorMongo{
 
     async addProduct(id, ProductoCompleto) {
         try {
-            const result = await this.db.updateOne({ _id: id }, { $push: { productos: ProductoCompleto } });
+            const result = await this.db.updateOne({ _id: id }, { $push: { productos: ProductoCompleto } }).lean()
             return result;
         } catch (error) {
             console.log(error);

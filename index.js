@@ -91,7 +91,7 @@ app.use((req, res, next) => {
 app.get("/", (req,res)=>{
     try{
         if (req.session.user){
-        res.render("main",{layout:"mensajes", user : req.session.user})
+        res.render("main",{layout:"principal", user : req.session.user})
         console.log(req.session)
     }else{
         res.redirect("/login")
