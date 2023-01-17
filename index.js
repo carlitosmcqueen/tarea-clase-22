@@ -39,9 +39,18 @@ const io = new Server(httpServer);
 import randomProductos from "./faker/fakerProductos.js";
 import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
 
+import path from "path";
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static("public"))
+
+
+
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("views"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };

@@ -60,9 +60,21 @@
 
     <main role="main" class="container">
       <h1 class="mt-5">productos</h1>
-      <div id="productos">
+      <div>
+        {{#each data}}
+        <div class="card" style="width: 18rem;"><img class="card-img-top" src="{{this.thumbnail}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.description}}</p>
 
+          <form action="/carrito/63bddf95156f705b8eabb71f/productos/{{_id}}" method="POST" >
+            <button type="submit" class="btn btn-danger btn-sm">Agregar alcarrito</button>
+          </form>
+          </div>
+        </div>
+        {{/each}}
       </div>
+      <div id="productos"></div>
       
     </main>
 
@@ -71,8 +83,6 @@
         <span class="text-muted">Mercado coder</span>
       </div>
     </footer>
-
-   
 
     <script src="../../public/scripts/productos.js" type="module"></script>
   </body>

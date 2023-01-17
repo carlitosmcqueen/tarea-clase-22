@@ -13,9 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 router.get("/", async (req, res) => {
     try {
         const data = await carritoDao.getAll()
-        console.log(JSON.stringify(data))
-        console.log(data._id)
-
+        
         res.render("main",{layout:"carrito",data:data});
         
     } catch (err) {
