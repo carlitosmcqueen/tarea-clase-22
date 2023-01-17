@@ -13,7 +13,9 @@ app.use(express.urlencoded({ extended: true }))
 router.get("/", async (req, res) => {
     try {
         const data = await carritoDao.getAll()
-        console.log(data)
+        console.log(JSON.stringify(data))
+        console.log(data._id)
+
         res.render("main",{layout:"carrito",data:data});
         
     } catch (err) {
@@ -23,11 +25,12 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
     try {
-        const {
-            id
-        } = req.params;
-        const data = await carritoDao.getById(id);
-        res.send(data);
+        const {id} = req.params;
+        let data = await carritoDao.getById(id);
+        const ojo = data.productos
+        console.log(ojo)
+        res.render("main",{layout:"carrito",data:data,ojo:ojo});
+
     } catch (err) {
         res.status(404).send(err);
     }
@@ -72,18 +75,18 @@ router.put("/:id", (req, res) => {
     }
 })
 
-router.delete("/:id", async (req, res) => {
-    try {
-        const {
-            id
-        } = req.params;
-        await carritoDao.deleteById(id);
-        res.send(`El producto fue eliminado`);
-    } catch (err) {
-        res.status(404).send(err.msg);
-    }
-})
 
+
+router.delete("/:id/productos/:id_prod", async (req, res) =>{
+    try {
+        const { id, id_prod } = req.params;
+        const productoCarrito = await productosDao.getById(id_prod)
+        await carrito.deleteProdById(id, productoCarrito);
+        res.send("Producto Eliminado");
+    } catch (e) {
+        res.send({ error: true });
+    }
+});
 
 
 

@@ -25,10 +25,22 @@
     <main>
         <div class="card text-center">
             <div class="card-header">
-                {{#each data}}
-                <p>{{this._id}}</p>
-                <p>{{this.productos}}</p>
-                {{/each}}
+              <div>
+                <p>{{data._id}}</p>
+              {{#each ojo}}
+
+              <div>
+                <p>{{this.title}}</p>
+                <p>{{this.description}}</p>
+                <button>hoy un boton</button>
+              </div>
+              {{/each}}
+
+              <button >realizar compra</button>
+
+
+              </div>
+              
             </div>
             <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>

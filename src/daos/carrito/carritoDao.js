@@ -21,6 +21,15 @@ class carritoDaoMongo extends ContenedorMongo{
             console.log(error);
         }
     }
+
+    async deleteProdById(id, ProductoCompleto){
+        try{
+            const result = await this.db.updateOne({_id:id},{$pull:{productos:ProductoCompleto}}).lean()
+            return result
+        }catch(e){
+
+        }
+    }
 }
 export default carritoDaoMongo
 
