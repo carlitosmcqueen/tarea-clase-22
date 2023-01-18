@@ -39,19 +39,13 @@ const io = new Server(httpServer);
 import randomProductos from "./faker/fakerProductos.js";
 import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
 
-import path from "path";
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-app.use(express.static("public"))
-
 
 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("public"))
 
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 app.use(session({
@@ -85,9 +79,9 @@ import { carritoRouter } from "./src/routes/carrito.js";
 import {compraRouter} from "./src/routes/compra.js";
 
 app.use("/",usuariosRouter)
-app.use("/productos",productosRouter)
-app.use("/carrito",carritoRouter)
-app.use("/compra",compraRouter)
+app.use("/api/productos",productosRouter)
+app.use("/api/carrito",carritoRouter)
+app.use("/api/compra",compraRouter)
 
 
 app.use((req, res, next) => {

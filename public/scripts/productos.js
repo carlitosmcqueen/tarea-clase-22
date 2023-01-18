@@ -1,35 +1,40 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    showProducts();
+    showProducts()
 })
 
-//* Traer productos de la BD
 const fetchData = async () => {
-    try {
-        const res = await fetch("/productos");
-        const data = await res.json()
-        console.log(data);
-        return data;
-    } catch (e) {
-        console.log()
+    try{
+        const res = await fetch("/api/productos")
+        const data = res.json()
+        showProducts(data)
+
+    }catch(e){
+        console.log(e)
     }
 }
 
-const contendorProductos = document.getElementById("productos")
+const contenedorProductos = document.getElementById("productos")
 
 const showProducts = async (data) => {
-    console.log("hola")
-    const productos = await fetchData(data)
-    productos.forEach(product=>{
-        const div  = document.createElement("div")
-        div.classList.add("card")
+    const productos = await fetchData(data);
+    productos.forEach(product => {
+        const div = document.createElement("div");
+        div.classList.add("card");
         div.innerHTML += `
-        <img src="${product.thumbnail}">
-        <h5 class="product-name">${product.title}</h5>
-        `
-        contendorProductos.appendChild(div)
-        const boton = document.getElementById(`boton${product._id}`)
-        boton.addEventListener("click", () =>{
+            <img src=${product.thumbnail}>
+            <h5 class="product-name">${product.name}</h5>
+            <p>${product.timestamp}</p>
+            <p>${product.description}</p>
+            <p>Código: ${product.code}</p>
+            <p>Stock: ${product.stock}</p>
+            <p>$${product.price}</p>
+            <button class="boton-add" id=boton${product._id}>AGREGAR AL CARRITO</button>
+            `
+        contenedorProductos.appendChild(div);
+    
+    });
+};
 
-        })
-    })
-}
+

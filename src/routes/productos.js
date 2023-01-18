@@ -14,15 +14,11 @@ app.use(express.urlencoded({ extended: true }))
 router.get("/",isLoggedIn, async (req, res) => {
     try {
         const data = await productosDao.getAll()
-        //res.send(data);
-        console.log(data);
-        res.render("main",{layout:"productos",data:data})
-
+        res.send(data);
     } catch (err) {
         res.status(404).send(err);
     }
 });
-
 
 router.get("/:id", async (req, res) => {
     try {

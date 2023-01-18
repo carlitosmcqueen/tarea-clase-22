@@ -1,89 +1,79 @@
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico" />
 
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico" />
 
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/"
-    />
+  <title>Sticky Footer Navbar Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
-    <link
-      href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Custom styles for this template -->
-    <link
-      href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css"
-      rel="stylesheet"
-    />
-  </head>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/" />
 
-  <body>
-    <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Super social</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">productos
-                <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">carrito</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css"
+    rel="stylesheet" />
+</head>
 
-    <main role="main" class="container">
-      <h1 class="mt-5">productos</h1>
-      <div>
-        {{#each data}}
-        <div class="card" style="width: 18rem;"><img class="card-img-top" src="{{this.thumbnail}}" alt="Card image cap">
+<body>
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Super social</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">productos
+              <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">carrito</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main" class="container">
+    <section class="container mt-3">
+      <h4>PRODUCTOS</h4>
+      <hr>
+      <div id="items"></div>
+      <template id="template-card">
+    <div class="col-12 mb-2 col-md-4">
+      <div class="card">
+        <img src="" class="card-img-top" alt="Producto">
         <div class="card-body">
-          <h5 class="card-title">{{this.title}}</h5>
-          <p class="card-text">{{this.description}}</p>
-
-          <form action="/carrito/63bddf95156f705b8eabb71f/productos/{{_id}}" method="POST" >
-            <button type="submit" class="btn btn-danger btn-sm">Agregar alcarrito</button>
-          </form>
-          </div>
+          <h5>Title</h5>
+          <p class="description"></p>
+          <p class="code">Código: <span></span></p>
+          <p class="time">Date: <span></span></p>
+          <h6 class="price">$ <span></span></h6>
+          <p class="stock">Stock: <span></span></p>
+          <button class="btn btn-dark">Agregar Producto</button>
         </div>
-        {{/each}}
       </div>
-      <div id="productos"></div>
-      
-    </main>
+    </div>
+  </template>
+    </section>
 
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Mercado coder</span>
-      </div>
-    </footer>
+    <script src="./scripts/productos.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  </main>
 
-    <script src="../../public/scripts/productos.js" type="module"></script>
-  </body>
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">Mercado coder</span>
+    </div>
+  </footer>
+</body>
+
 </html>
+

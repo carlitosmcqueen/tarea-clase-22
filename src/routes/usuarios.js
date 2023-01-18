@@ -140,4 +140,8 @@ router.get('/logout' ,(req, res) => {
     res.render('main', {layout: 'logout', user : req.session.user})
 })
 
+router.get("/productos",(req, res)=>{
+    res.render('main', {layout: 'productos',user: req.session.user})
+})
+
 export {router as usuariosRouter}
