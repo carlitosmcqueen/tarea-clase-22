@@ -17,6 +17,7 @@ router.get("/",isLoggedIn, async (req, res) => {
         res.send(data);
     } catch (err) {
         res.status(404).send(err);
+
     }
 });
 
@@ -27,6 +28,7 @@ router.get("/:id", async (req, res) => {
         res.send(data);
     } catch (err) {
         res.status(404).send(err);
+
     }
 });
 
@@ -38,6 +40,7 @@ router.post("/", async (req, res) => {
         res.send(data);
     } catch (err) {
         res.status(404).send(err);
+
     }
 });
 
@@ -49,7 +52,8 @@ router.put("/:id", (req, res) => {
         productosDao.updateById(idInt, prodNuevo);
         res.send(`Producto con id ${id} actualizado`);
     } catch (err) {
-        res.status(404).send(err.msg);
+        res.status(404).send(err);
+
     }
 });
 
@@ -59,7 +63,9 @@ router.delete("/:id", async (req, res) => {
         await productosDao.deleteById(id);
         res.send(`El producto con id ${id} fue eliminado`);
     } catch (err) {
-        res.status(404).send(err.msg);
+        res.status(404).send(err);
+
+
     }
 });
 

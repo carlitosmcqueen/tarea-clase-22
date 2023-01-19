@@ -3,6 +3,8 @@ import {Router} from "express"
 import daos from "../daos/index.js"
 import twilio from "twilio"
 import * as dotenv from "dotenv"
+
+
 dotenv.config()
 
 
@@ -24,6 +26,7 @@ router.get("/", async (req, res) => {
         res.send(data)
     } catch (err) {
         res.status(404).send(err);
+
     }
 });
 
@@ -31,12 +34,12 @@ router.get("/:id", async (req, res) => {
     try {
         const {id} = req.params;
         let data = await carritoDao.getById(id);
-        const ojo = data.productos
-        console.log(ojo)
         res.send(data)
 
     } catch (err) {
         res.status(404).send(err);
+
+
     }
 });
 
@@ -48,6 +51,8 @@ router.post("/", async (req, res) => {
         res.send(data);
     } catch (err) {
         res.status(404).send(err);
+
+
     }
 });
 
@@ -75,7 +80,9 @@ router.put("/:id", (req, res) => {
         carritoDao.updateById(id, prodNuevo);
         res.send(`se actualizo el producto`);
     } catch (err) {
-        res.status(404).send(err.msg);
+        res.status(404).send(err);
+
+
     }
 })
 
@@ -87,8 +94,10 @@ router.delete("/:id/productos/:id_prod", async (req, res) =>{
         const productoCarrito = await productosDao.getById(id_prod)
         await carrito.deleteProdById(id, productoCarrito);
         res.send("Producto Eliminado");
-    } catch (e) {
-        res.send({ error: true });
+    } catch (err) {
+        res.status(404).send(err);
+
+
     }
 });
 
@@ -109,9 +118,10 @@ router.post("/:id/carrito/:id_carrito", async (req,res) => {
                 to: `whatsapp:+5491160513857`,
                 
             })
-            res.send("se compro");
+            res.redirect("/")
         } catch (err) {
             res.status(404).send(err);
+
         }
     
 })

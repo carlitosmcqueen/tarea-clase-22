@@ -7,6 +7,9 @@ import UsuariosPass from "../contenedores/contenedorMongoUsuarios.js";
 import isLoggedIn from "../../middlewares/log.js";
 import twilio from 'twilio';
 import { createTransport } from 'nodemailer';
+import logger from "../../logs.js"
+
+
 import * as dotenv from "dotenv"
 dotenv.config()
 
@@ -111,23 +114,25 @@ router.post('/register', passport.authenticate('singup', { failureRedirect: "/re
               user: "virginie.christiansen@ethereal.email",
               pass: "NxBXFkZUZdEta8jezB",
             },
+
           });
         
           const opts = {
             from: "virginie.christiansen@ethereal.email",
             to: "garth.torp@ethereal.email",
-            subject:"titulo",
-            html:"hello",
-          };
+            subject:"creacion de usuario",
+            html:`<h1>Hola ${username}</h1> <br> <h2>Gracias por registrar en la mejor pagina del mundo</h2>`,
+          }
           try {
             return transporter.sendMail(opts);
             
           } catch (e) {
-            console.log(e);
+            console.error(e)
           }
         
     }catch(e){
-        console.log(e)
+        console.error(e)
+
     }
     res.redirect('/');
 });
