@@ -56,3 +56,5 @@ router.post("/:id/carrito/:id_carrito", async (req, res) => {
 
 export { router as compraRouter}
 
+
+

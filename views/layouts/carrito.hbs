@@ -23,35 +23,11 @@
 
 <body>
     <main>
-        <div class="card text-center">
-            <div class="card-header">
-              <div>
-                <p>{{data._id}}</p>
-              {{#each ojo}}
-
-              <div>
-                <p>{{this.title}}</p>
-                <p>{{this.description}}</p>
-                <button>soy un boton</button>
-              </div>
-              {{/each}}
-
-              <button >realizar compra</button>
-
-
-              </div>
-              
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
+      <div id="divCarrito"></div>
 
     </main>
-
-
+    <script src="./scripts/carrito.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </body>
 
 </html>

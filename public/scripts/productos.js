@@ -1,40 +1,74 @@
 
+const mostrarProductos =()=>{
+    fetch("/api/productos")
+    .then((response)=> response.json())
+    .then((json)=>{
+        const productos = Object.assign({}, json)
+        const prodController= Handlebars.compile(viewProductos)
+        const prodHtml =prodController({productos})
+        document.getElementById('divProductos').innerHTML = prodHtml
+        botonesAgregar()
+        
+    })
+    
+}
+//devuelve lista de carrito
+const idCar = await fetch("/api/carrito")
+    .then(response=>response.json())
+    .then((json)=>{
+        const id =json[0]._id
+        return id
+    })
 
-document.addEventListener("DOMContentLoaded", () => {
-    showProducts()
-})
 
-const fetchData = async () => {
-    try{
-        const res = await fetch("/api/productos")
-        const data = res.json()
-        showProducts(data)
-
-    }catch(e){
-        console.log(e)
-    }
+const botonesAgregar=() =>{
+    const tabla = document.getElementById('tabla')
+    const botones = tabla.querySelectorAll("button")
+    for(let i= 0; i<botones.length; i++){
+        botones[i].addEventListener('click',(e)=>{
+          e.preventDefault()
+          const idProductos = e.target.value
+          agregarProductoCarrito(idProductos)
+        },false)
+      }
 }
 
-const contenedorProductos = document.getElementById("productos")
 
-const showProducts = async (data) => {
-    const productos = await fetchData(data);
-    productos.forEach(product => {
-        const div = document.createElement("div");
-        div.classList.add("card");
-        div.innerHTML += `
-            <img src=${product.thumbnail}>
-            <h5 class="product-name">${product.name}</h5>
-            <p>${product.timestamp}</p>
-            <p>${product.description}</p>
-            <p>Código: ${product.code}</p>
-            <p>Stock: ${product.stock}</p>
-            <p>$${product.price}</p>
-            <button class="boton-add" id=boton${product._id}>AGREGAR AL CARRITO</button>
-            `
-        contenedorProductos.appendChild(div);
-    
-    });
-};
+const agregarProductoCarrito =(id)=> {
+    fetch(`/api/carrito/${idCar}/productos/${id}`,{
+        method: "POST", 
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+    })
+    .then(res=>{
+        console.log(`se agrego el productos ${id}`)
+    })    
+}
 
 
+const viewProductos= `
+<div class="container mt-3">
+<h1>View Productos</h1>
+<table  id="tabla" class="table table-primary" align="center">
+    <thead>
+        <tr class="table-dark">
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Miniatura</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    {{#each productos}}
+        <tr> 
+            <td class="table-info">{{this.title}}</td>
+            <td class="table-success"> {{this.precio}}</td>
+            <td class="table-warning"><img style="height: 30px" class="img-fluid" src="{{this.thumbnail}}" alt="imagen"/></td>
+            <td class="table-danger"><button  value="{{this._id}}" class="btn btn-danger comprar">Agregar al Carrito</button></td>
+        </tr>
+    {{/each}}
+</table>
+`
+
+mostrarProductos()
