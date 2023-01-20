@@ -30,14 +30,16 @@ const app = express();
 
 
 //-------------SERVER-------------
-import { Server } from 'socket.io';
-import { createServer } from 'http';
-const httpServer = createServer(app); 
-const io = new Server(httpServer);
+
+//ESTP HACE FUNCIONAR WEBSOCKET  CON LOS MENSAJES Y PRODUCTOS RAMDOMS
+// import { Server } from 'socket.io';
+// import { createServer } from 'http';
+// const httpServer = createServer(app); 
+// const io = new Server(httpServer);
 
 
-import randomProductos from "./faker/fakerProductos.js";
-import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
+//import randomProductos from "./src/utils/faker/fakerProductos.js";
+// import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
 
 
 
@@ -116,47 +118,47 @@ app.all("*",(req,res)=>{
 })
 
 
+// CONNECCION WEB SOCKET
+// io.on("connection", async (socket)=>{
+//     console.log("se pudo conectar")
+//     socket.emit('mensajes', await getMsjs());
+//     socket.on("mensajes", async (msj)=>{
+//         await saveMsjs(msj)
+//         io.sockets.emit("mensajes",await getMsjs())
 
-io.on("connection", async (socket)=>{
-    console.log("se pudo conectar")
-    socket.emit('mensajes', await getMsjs());
-    socket.on("mensajes", async (msj)=>{
-        await saveMsjs(msj)
-        io.sockets.emit("mensajes",await getMsjs())
-
-    })
-    socket.emit('randomProducts', randomProductos());
-})
+//     })
+//     socket.emit('randomProducts', randomProductos());
+// })
 
 
-const CON_CHILD_PROCESS_FORK = !false;
-if (CON_CHILD_PROCESS_FORK) {
-  let calculo = fork("./random.js");
+// const CON_CHILD_PROCESS_FORK = !false;
+// if (CON_CHILD_PROCESS_FORK) {
+//   let calculo = fork("./random.js");
 
-  var taskId = 0;
-  var tasks = {};
+//   var taskId = 0;
+//   var tasks = {};
 
-  function addTask(data, callback) {
-    var id = taskId++;
-    calculo.send({ id: id, data: data });
-    tasks[id] = callback;
-  }
+//   function addTask(data, callback) {
+//     var id = taskId++;
+//     calculo.send({ id: id, data: data });
+//     tasks[id] = callback;
+//   }
 
-  calculo.on("message", function (message) {
-    tasks[message.id](message);
-  });
+//   calculo.on("message", function (message) {
+//     tasks[message.id](message);
+//   });
 
-  app.get("/randoms", async (req, res) => {
-    addTask(req.query.cant || 1000, (randoms) => {
-      res.json(randoms);
-    });
-  });
+//   app.get("/randoms", async (req, res) => {
+//     addTask(req.query.cant || 1000, (randoms) => {
+//       res.json(randoms);
+//     });
+//   });
 
-} else {
-  app.get("/randoms", async (req, res) => {
-    res.send('<h2>por si no funca</h2>');
-  });
-}
+// } else {
+//   app.get("/randoms", async (req, res) => {
+//     res.send('<h2>por si no funca</h2>');
+//   });
+// }
 
 // aca borre lo que tenia antes y dejo este que creo q es lo que pide la consigna
 

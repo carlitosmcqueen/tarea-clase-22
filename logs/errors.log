@@ -1,0 +1,7 @@
+[2023-01-19T18:54:30.538] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "prueba" (type string) at path "_id" for model "productos"
+[2023-01-19T18:55:06.440] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "pepe" (type string) at path "_id" for model "productos"
+[2023-01-19T18:55:32.105] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "pepe" (type string) at path "_id" for model "productos"
+[2023-01-19T18:55:33.314] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "pepe" (type string) at path "_id" for model "productos"
+[2023-01-19T18:56:21.340] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "pepe" (type string) at path "_id" for model "productos"
+[2023-01-19T18:59:07.538] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "pepe" (type string) at path "_id" for model "productos"
+[2023-01-19T18:59:26.960] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "pepe" (type string) at path "_id" for model "productos"
