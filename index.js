@@ -31,11 +31,11 @@ const app = express();
 
 //-------------SERVER-------------
 
-//ESTP HACE FUNCIONAR WEBSOCKET  CON LOS MENSAJES Y PRODUCTOS RAMDOMS
-// import { Server } from 'socket.io';
-// import { createServer } from 'http';
-// const httpServer = createServer(app); 
-// const io = new Server(httpServer);
+
+import { Server } from 'socket.io';
+import { createServer } from 'http';
+const httpServer = createServer(app); 
+const io = new Server(httpServer);
 
 
 //import randomProductos from "./src/utils/faker/fakerProductos.js";

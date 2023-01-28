@@ -1,16 +1,15 @@
 import mongoose from "mongoose";
 import config from "../../mongoConfig.js";
-
 import logger from "../../logs.js";
-
+import ContenedorFactory from "./contenedorFactory.js";
 
 
 await mongoose.connect(config.mongo.url, config.mongo.options)
 
-
-class ContenedorMongo {
+class ContenedorMongo extends ContenedorFactory{
     
     constructor(coleccion,esquema){
+        super()
         this.db = mongoose.model(coleccion,esquema)
     }
 

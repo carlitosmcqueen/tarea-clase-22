@@ -16,4 +16,6 @@ const daos ={
     }
 }
 
+
 export default daos[process.env.TIPO]()
+

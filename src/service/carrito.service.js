@@ -74,7 +74,7 @@ export const DELETEPRODUCT = async (req, res) =>{
     try {
         const { id, id_prod } = req.params;
         const productoCarrito = await productosDao.getById(id_prod)
-        await carrito.deleteProdById(id, productoCarrito);
+        await carritoDao.deleteProdById(id, productoCarrito);
         res.send("Producto Eliminado");
     } catch (err) {
         res.status(404).send(err);

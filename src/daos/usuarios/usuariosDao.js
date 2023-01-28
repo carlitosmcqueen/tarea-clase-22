@@ -12,11 +12,8 @@ class UsuarioDaoMongo extends ContenedorMongo {
             return user;
         }catch(err){
             logger.error(`error al buscar usuario: ${err}`)
-
         }
-        
     }
-    
     async findUser(username, password) {
         try {
             const result = await this.db.find({ username, password });
@@ -25,14 +22,11 @@ class UsuarioDaoMongo extends ContenedorMongo {
             } else {
                 const user = result[0];
                 logger.info("se encontro al usuario")
-
                 return user;
             }
         } catch (error) {
             logger.error(`error al buscar usuario: ${error}`)
-
         }
     }
 }
-
 export default UsuarioDaoMongo;
