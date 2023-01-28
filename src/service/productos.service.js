@@ -7,7 +7,8 @@ export const GET = async (req, res) => {
     try {
         const data = await productosDao.getAll()
         let productos = data.map(producto => new enviarProducto(producto))
-        res.send(productos);
+        
+        res.send(data);
         
     } catch (err) {
         res.status(404).send(err);
@@ -19,9 +20,8 @@ export const GETbyID = async (req, res) => {
     try {
         const {id} = req.params;
         const data = await productosDao.getById(id);
-        let producto = data.map(producto => new enviarProducto(producto))
-        console.log(producto);
-        res.send(producto);
+        
+        res.send(data);
     } catch (err) {
         res.status(404).send(err);
 
