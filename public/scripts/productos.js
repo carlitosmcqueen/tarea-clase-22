@@ -1,5 +1,6 @@
 
 const mostrarProductos =()=>{
+
     fetch("/api/productos")
     .then((response)=> response.json())
     .then((json)=>{
@@ -71,4 +72,7 @@ const viewProductos= `
 </table>
 `
 
+
 mostrarProductos()
+
+

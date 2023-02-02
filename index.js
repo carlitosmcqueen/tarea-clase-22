@@ -99,11 +99,9 @@ app.get("/", (req,res)=>{
     }else{
         res.redirect("/login")
     }
-    
     }catch (error) {
         console.log(error);
     }
-   
 })
 
 app.get("/productos-test",isLoggedIn ,async (req,res)=>{
@@ -118,53 +116,11 @@ app.all("*",(req,res)=>{
 })
 
 
-// CONNECCION WEB SOCKET
-// io.on("connection", async (socket)=>{
-//     console.log("se pudo conectar")
-//     socket.emit('mensajes', await getMsjs());
-//     socket.on("mensajes", async (msj)=>{
-//         await saveMsjs(msj)
-//         io.sockets.emit("mensajes",await getMsjs())
-
-//     })
-//     socket.emit('randomProducts', randomProductos());
-// })
-
-
-// const CON_CHILD_PROCESS_FORK = !false;
-// if (CON_CHILD_PROCESS_FORK) {
-//   let calculo = fork("./random.js");
-
-//   var taskId = 0;
-//   var tasks = {};
-
-//   function addTask(data, callback) {
-//     var id = taskId++;
-//     calculo.send({ id: id, data: data });
-//     tasks[id] = callback;
-//   }
-
-//   calculo.on("message", function (message) {
-//     tasks[message.id](message);
-//   });
-
-//   app.get("/randoms", async (req, res) => {
-//     addTask(req.query.cant || 1000, (randoms) => {
-//       res.json(randoms);
-//     });
-//   });
-
-// } else {
-//   app.get("/randoms", async (req, res) => {
-//     res.send('<h2>por si no funca</h2>');
-//   });
-// }
-
-// aca borre lo que tenia antes y dejo este que creo q es lo que pide la consigna
-
-const PORT = process.env.PORT || 8080
+ const PORT = process.env.PORT || 8080
 const server = httpServer.listen(PORT, () => {
-    console.log(`Servidor express escuchando en el puerto ${PORT}`)
+     console.log(`Servidor express escuchando en el puerto ${PORT}`)
 })
 
 server.on('error', error => console.log(`Error en servidor ${error}`))
+
+//export default httpServer

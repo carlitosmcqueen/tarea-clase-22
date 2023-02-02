@@ -12,7 +12,7 @@ const client = twilio(accountSID, authToken)
 export const GET = async (req, res) => {
     try {
         const data = await carritoDao.getAll()
-        res.send(data)
+        res.status(200).send(data)
     } catch (err) {
         res.status(404).send(err);
 
@@ -22,7 +22,7 @@ export const GETbyID = async (req, res) => {
     try {
         const {id} = req.params;
         let data = await carritoDao.getById(id);
-        res.send(data)
+        res.status(200).send(data)
 
     } catch (err) {
         res.status(404).send(err);
@@ -35,7 +35,7 @@ export const POSTCART = async (req, res) => {
     try {
         const data = req.body;
         await carritoDao.createCart(data);
-        res.send(data);
+        res.status(200).send(data);
     } catch (err) {
         res.status(404).send(err);
 
@@ -62,7 +62,7 @@ export const PUTCART = async (req, res) => {
         } = req.params;
         const prodNuevo = req.body;
         carritoDao.updateById(id, prodNuevo);
-        res.send(`se actualizo el producto`);
+        res.status(200).send(`se actualizo el producto`);
     } catch (err) {
         res.status(404).send(err);
 
@@ -75,7 +75,7 @@ export const DELETEPRODUCT = async (req, res) =>{
         const { id, id_prod } = req.params;
         const productoCarrito = await productosDao.getById(id_prod)
         await carritoDao.deleteProdById(id, productoCarrito);
-        res.send("Producto Eliminado");
+        res.status(200).send("Producto Eliminado");
     } catch (err) {
         res.status(404).send(err);
 
