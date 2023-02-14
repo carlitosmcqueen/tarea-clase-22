@@ -4,6 +4,6 @@ const isLoggedIn = (req, res, next) => {
     } else {
         res.redirect('/');
     }
+    
 };
-
-export default isLoggedIn;
+export default isLoggedIn

@@ -5,10 +5,9 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local'
 import UsuariosPass from "../contenedores/contenedorMongoUsuarios.js";
 import isLoggedIn from "../../middlewares/log.js";
+
 import twilio from 'twilio';
 import { createTransport } from 'nodemailer';
-import logger from "../../logs.js"
-
 
 import * as dotenv from "dotenv"
 dotenv.config()
@@ -73,7 +72,12 @@ passport.deserializeUser((id, done) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-router.get("/login",isLoggedIn, (req,res)=>{
+const authMw = (req, res, next) => {
+    req.isAuthenticated() ? next() : res.send({error:false})
+}
+
+
+router.get("/login", (req,res)=>{
     res.render("main",{layout:"login"})
 
 })
@@ -129,7 +133,6 @@ router.post('/register', passport.authenticate('singup', { failureRedirect: "/re
           } catch (e) {
             console.error(e)
           }
-        
     }catch(e){
         console.error(e)
 
@@ -145,7 +148,8 @@ router.get('/logout' ,(req, res) => {
     res.render('main', {layout: 'logout', user : req.session.user})
 })
 
-router.get("/productos",(req, res)=>{
+router.get("/productos",authMw,(req, res)=>{
+
     res.render('main', {layout: 'productos',user: req.session.user})
 })
 

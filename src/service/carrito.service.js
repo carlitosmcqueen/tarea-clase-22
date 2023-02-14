@@ -57,9 +57,7 @@ export const POSTPRODUCT = async (req, res) => {
 
 export const PUTCART = async (req, res) => {
     try {
-        const {
-            id
-        } = req.params;
+        const {id} = req.params;
         const prodNuevo = req.body;
         carritoDao.updateById(id, prodNuevo);
         res.status(200).send(`se actualizo el producto`);
@@ -84,10 +82,7 @@ export const DELETEPRODUCT = async (req, res) =>{
 }
 export const POSTCOMPRA = async (req,res) => {
     try {
-        const {
-            id,
-            id_carrito
-        } = req.params;
+        const {id,id_carrito} = req.params;
         const carritoCompra = await carritoDao.getById(id_carrito);
         await compraDao.llenarCompra(id, carritoCompra);
         

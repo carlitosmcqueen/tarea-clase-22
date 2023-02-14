@@ -26,7 +26,18 @@ const port = yargs.alias({
 
 
 const app = express();
-
+const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+app.use(session({
+    secret: "32m32e90me2393",
+    resave: false,
+    cookie:{maxAge: 60000},
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: "mongodb+srv://CarlosCoder:coder123@cluster0.tl5cqne.mongodb.net/test",
+      mongoOptions: advancedOptions,
+    }),
+  })
+)
 
 
 //-------------SERVER-------------
@@ -49,18 +60,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"))
 
-const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
-app.use(session({
-      secret: "32m32e90me2393",
-      resave: true,
-      cookie:{maxAge: 60000},
-      saveUninitialized: false,
-      store: MongoStore.create({
-        mongoUrl: "mongodb+srv://CarlosCoder:coder123@cluster0.tl5cqne.mongodb.net/test",
-        mongoOptions: advancedOptions,
-      }),
-    })
-)
+
 
 const hbs= handlebars.engine({
     extname: "hbs",
@@ -116,7 +116,7 @@ app.all("*",(req,res)=>{
 })
 
 
- const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080
 const server = httpServer.listen(PORT, () => {
      console.log(`Servidor express escuchando en el puerto ${PORT}`)
 })
