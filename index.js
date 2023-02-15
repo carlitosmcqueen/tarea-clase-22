@@ -29,7 +29,7 @@ const app = express();
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 app.use(session({
     secret: "32m32e90me2393",
-    resave: false,
+    resave: true,
     cookie:{maxAge: 60000},
     saveUninitialized: false,
     store: MongoStore.create({

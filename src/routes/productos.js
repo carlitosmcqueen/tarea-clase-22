@@ -1,6 +1,7 @@
 import express from "express";
 import { Router } from "express";
-import isLoggedIn from "../../middlewares/log.js";
+import authMw from "../../middlewares/log.js";
+
 import * as ProductosService from "../service/productos.service.js";
 
 
@@ -10,7 +11,7 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-router.get("/",isLoggedIn,ProductosService.GET);
+router.get("/",ProductosService.GET);
 
 router.get("/:id",ProductosService.GETbyID);
 

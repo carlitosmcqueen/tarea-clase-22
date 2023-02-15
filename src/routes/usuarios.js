@@ -4,14 +4,11 @@ import bcrypt from 'bcrypt';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local'
 import UsuariosPass from "../contenedores/contenedorMongoUsuarios.js";
-import isLoggedIn from "../../middlewares/log.js";
-
+import authMw from "../../middlewares/log.js";
 import twilio from 'twilio';
 import { createTransport } from 'nodemailer';
-
 import * as dotenv from "dotenv"
 dotenv.config()
-
 
 //twilio
 const accountSID = "AC68263a028427d38a73d6e3d832cdc0ae"
@@ -24,7 +21,8 @@ const app = express()
 app.use(express.json())
 
 
-passport.use("singup",
+
+passport.use("signup",
 new LocalStrategy({passReqToCallback: true},(req,username,password,done)=>{
     const {edad,telefono,imagen} = req.body
     UsuariosPass.findOne({username},(err,user)=>{
@@ -67,16 +65,12 @@ passport.serializeUser((userObj, done) => {
 passport.deserializeUser((id, done) => {
     UsuariosPass.findById(id, done);
 });
-
-
+/// ----------------------------
 app.use(passport.initialize());
 app.use(passport.session());
 
-const authMw = (req, res, next) => {
-    req.isAuthenticated() ? next() : res.send({error:false})
-}
 
-
+// ---------------------------------------------------------- para los loguearte  -------------------------------
 router.get("/login", (req,res)=>{
     res.render("main",{layout:"login"})
 
@@ -100,7 +94,7 @@ router.get('/register', (req, res) => {
     res.render('main', {layout: 'register'})
 })
   
-router.post('/register', passport.authenticate('singup', { failureRedirect: "/registerError" }), async (req, res) => {
+router.post('/register', passport.authenticate('signup', { failureRedirect: "/registerError" }), async (req, res) => {
     try{
         const {username,telefono} = req.body
         await client.messages.create({
@@ -148,9 +142,11 @@ router.get('/logout' ,(req, res) => {
     res.render('main', {layout: 'logout', user : req.session.user})
 })
 
-router.get("/productos",authMw,(req, res)=>{
 
+// -------------------------------------- aca las vistas de carrito y productos
+router.get("/productos",authMw,(req, res)=>{
     res.render('main', {layout: 'productos',user: req.session.user})
+
 })
 
 router.get("/carrito",(req, res)=>{
