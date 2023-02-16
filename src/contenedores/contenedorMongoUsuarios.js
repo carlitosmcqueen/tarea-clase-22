@@ -12,5 +12,5 @@ const UsuariosPass = mongoose.model("users", {
 
 });
 
+export default UsuariosPass
 
-export default UsuariosPass;

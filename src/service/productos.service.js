@@ -1,5 +1,5 @@
 import daos from "../daos/index.js";
-const {productosDao} = await daos
+const {productosDao,mensajesDao} = await daos
 import { guardarProducto } from "../dto/productos.dto.js";
 import {enviarProducto} from "../dto/productos.dto.js";
 
@@ -7,6 +7,7 @@ export const GET = async (req, res) => {
     try {
         const data = await productosDao.getAll()
         //let productos = data.map(producto => new enviarProducto(producto))
+        console.log(await mensajesDao.getMsjs())
         res.status(200).send(data);
         
     } catch (err) {

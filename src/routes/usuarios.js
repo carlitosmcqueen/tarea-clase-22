@@ -153,5 +153,8 @@ router.get("/carrito",(req, res)=>{
     res.render('main', {layout: 'carrito',user: req.session})
     
 })
+router.get("/mensajes",(req, res)=>{
+    res.render('main', {layout: 'mensajes'})
+})
 
 export {router as usuariosRouter}

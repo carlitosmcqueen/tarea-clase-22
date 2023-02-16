@@ -50,14 +50,12 @@ class ContenedorMongo extends ContenedorFactory{
 
         }
     }
-
     async deleteById(id) {
         try {
             const result = await this.db.deleteOne({ _id: id }).lean()
             return result;
         } catch (error) {
             logger.error(`error al borrar por su id: ${error}`)
-
         }
     }
     async deleteAll() {
@@ -67,9 +65,6 @@ class ContenedorMongo extends ContenedorFactory{
             logger.error(`error al borrar: ${error}`)
 
         }
-        
     }
-    
 }
-
 export default ContenedorMongo
