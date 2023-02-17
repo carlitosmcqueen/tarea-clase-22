@@ -29,6 +29,17 @@ export const GETbyID = async (req, res) => {
     }
 }
 
+export const GETbyTitle = async (req, res) => {
+    try{
+        const {title} = req.params
+        const data = await productosDao.getByCategory(title)
+        res.send(data)
+    }catch(err){
+        res.send(err)
+    }
+}
+
+
 export const POST = async (req, res) => {
     try {
         const {title,price,thumbnail,description} = req.body;

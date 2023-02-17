@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import isLoggedIn from "./middlewares/log.js";
+
 import daos from "./src/daos/index.js"
 const {mensajesDao} = await daos
 //logger
@@ -52,11 +53,12 @@ const io = new Server(httpServer);
 // import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
 io.on("connection", async (socket) => {
     console.log("se conecto a chatSocket")
-    socket.emit("mensajes", await mensajesDao.getMsjs())
-    socket.on("mensajes", async (msj) => {
-        await mensajesDao.saveMsjs(msj)
-        io.sockets.emit("mensajes", await mensajesDao.getMsjs())
-    })
+    
+socket.emit("mensajes", await mensajesDao.getMsjs())
+             socket.on("mensajes", async (msj) => {
+                 await mensajesDao.saveMsjs(msj)
+                 io.sockets.emit("mensajes", await mensajesDao.getMsjs())
+                })
 })
 
 

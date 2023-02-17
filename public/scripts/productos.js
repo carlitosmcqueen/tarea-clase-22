@@ -1,6 +1,5 @@
 
 const mostrarProductos =()=>{
-
     fetch("/api/productos")
     .then((response)=> response.json())
     .then((json)=>{
@@ -9,10 +8,29 @@ const mostrarProductos =()=>{
         const prodHtml =prodController({productos})
         document.getElementById('divProductos').innerHTML = prodHtml
         botonesAgregar()
-        
     })
-    
 }
+function mostrarProductosCategory(category){
+    fetch(`/api/productos/categoria/${category}`)
+    .then((response) => response.json)
+    .then((json)=>{
+        
+        const productos = Object.assign({}, json)
+        const prodController= Handlebars.compile(viewProductos)
+        const prodHtml =prodController({productos})
+        document.getElementById('divProductos').innerHTML = prodHtml
+        botonesAgregar()
+    })    
+}
+const boton = document.getElementById("botonCategory")
+
+boton.addEventListener("click",()=>{
+    console.log(boton.value)
+    mostrarProductosCategory(boton.value)
+})
+
+
+
 //devuelve lista de carrito
 const idCar = await fetch("/api/carrito")
     .then(response=>response.json())
@@ -72,7 +90,7 @@ const viewProductos= `
 </table>
 `
 
-
 mostrarProductos()
+mostrarProductosCategory("arroz")
 
 

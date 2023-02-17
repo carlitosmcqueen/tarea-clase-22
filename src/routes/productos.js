@@ -13,8 +13,9 @@ app.use(express.urlencoded({ extended: true }))
 
 router.get("/",ProductosService.GET);
 
-router.get("/:id",ProductosService.GETbyID);
+router.get("/:id",ProductosService.GETbyID)
 
+router.get("/categoria/:title",ProductosService.GETbyTitle)
 
 router.post("/", ProductosService.POST);
 

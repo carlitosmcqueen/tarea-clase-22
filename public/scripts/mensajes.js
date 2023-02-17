@@ -4,8 +4,7 @@ const ingresoMensaje = document.getElementById("ingresoMensaje");
 const botonEnviar = document.getElementById("botonEnviar");
 
 socket.on('mensajes', (msj) => {
-    const denormMsjs = normalizr.denormalize(msj.result, fileSchema, msj.entities);
-    console.log(denormMsjs);
+    
     renderMsj(msj);
     renderComp(msj, msj);
 })
@@ -34,7 +33,7 @@ const fileSchema = [msjSchema]
 
 const renderMsj = (msj) => {
     const html = msj.map(element => ` <article>
-    <span class="id">${element._doc.author.id}</span><span class="time">[${element._doc.author.timestamp}]:</span><span clas="text">${element._doc.text}</span><img src="${element._doc.author.avatar}" alt="avatar" class="avatar">
+    <span class="id">${element.author.id}</span><span class="time">[${element.author.timestamp}]:</span><span clas="text">${element.text}</span><img src="${element.author.avatar}" alt="avatar" class="avatar">
                     </article>`).join(" ")
     document.getElementById("mensajes").innerHTML = html;
 

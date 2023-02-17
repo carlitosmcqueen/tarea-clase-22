@@ -26,3 +26,6 @@
 [2023-02-02T17:22:31.953] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
 [2023-02-02T17:38:20.209] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
 [2023-02-02T17:39:39.841] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-02-16T20:50:23.354] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "sdasd" (type string) at path "_id" for model "productos"
+[2023-02-16T20:50:35.006] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "23123ffsd" (type string) at path "_id" for model "productos"
+[2023-02-17T00:44:11.375] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "arroz" (type string) at path "_id" for model "productos"
