@@ -1,12 +1,15 @@
 const socket = io.connect()
 
+
 const ingresoMensaje = document.getElementById("ingresoMensaje");
-const botonEnviar = document.getElementById("botonEnviar");
+const botonEnviar = document.getElementById("botonEnviar")
+const usuario = document.getElementById("usuario")
+
 
 socket.on('mensajes', (msj) => {
-    
     renderMsj(msj);
-    renderComp(msj, msj);
+    renderComp(msj, msj)
+
 })
 
 botonEnviar.addEventListener('click', (e) => {
@@ -14,11 +17,6 @@ botonEnviar.addEventListener('click', (e) => {
     const mensaje = {
         author: {
             id: ingresoMensaje.children.id.value,
-            nombre: ingresoMensaje.children.nombre.value,
-            apellido: ingresoMensaje.children.apellido.value,
-            edad: ingresoMensaje.children.edad.value,
-            alias: ingresoMensaje.children.alias.value,
-            avatar: ingresoMensaje.children.avatar.value,
         },
         text: ingresoMensaje.children.text.value
     }

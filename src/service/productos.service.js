@@ -6,10 +6,7 @@ import {enviarProducto} from "../dto/productos.dto.js";
 export const GET = async (req, res) => {
     try {
         const data = await productosDao.getAll()
-        //let productos = data.map(producto => new enviarProducto(producto))
-        console.log(await mensajesDao.getMsjs())
-        res.status(200).send(data);
-        
+        res.status(200).send(data);        
     } catch (err) {
         res.status(404).send(err);
 

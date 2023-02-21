@@ -6,7 +6,7 @@ const {compraDao,carritoDao} = await daos
 export const GET = async (req,res) => {
     try{
         const data = await compraDao.getAll()
-        res.send(data);
+        res.status(200).send(data);
     }catch(err) {
         res.status(404).send(err);
     }
@@ -17,17 +17,16 @@ export const GETbyID = async (req, res) => {
             id
         } = req.params;
         const data = await compraDao.getById(id);
-        res.send(data);
+        res.status(200).send(data);
     } catch (err) {
         res.status(404).send(err);
-
     }
 }
 export const POSTCOMPRA = async (req, res) => {
     try {
         const data = req.body;
         await compraDao.crearCompra(data);
-        res.send(data);
+        res.status(200).send(data);
     } catch (err) {
         res.status(404).send(err);
 
@@ -43,7 +42,6 @@ export const POSTCARRITOinCOMPRA = async (req, res) => {
         const carritoCompra = await carritoDao.getById(id_carrito);
         const productosCarrito = carritoCompra.productos
         await compraDao.llenarCompra(id, carritoCompra)
-
 
         const transporter = createTransport({
             host: "smtp.ethereal.email",

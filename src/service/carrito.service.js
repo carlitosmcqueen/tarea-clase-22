@@ -49,7 +49,8 @@ export const POSTPRODUCT = async (req, res) => {
             id_producto
         } = req.params;
         const productoCarrito = await productosDao.getById(id_producto);
-        await carritoDao.addProduct(id, productoCarrito)        
+        const data = await carritoDao.addProduct(id, productoCarrito)
+        res.status(200).send(data)
     } catch (err) {
         res.status(404).send(err);
     }

@@ -5,11 +5,6 @@ class mensajesDaoMongo extends ContenedorMongo{
         super("mensajes",{
             author: {
                 id: { type: String, required: true, max: 100 },
-                nombre: { type: String, required: true, max: 100 },
-                apellido: { type: String, required: true, max: 50 },
-                edad: { type: Number, required: true },
-                alias: { type: String, required: true },
-                avatar: { type: String, required: true, max: 100 },
                 timestamp: { type: Date, default: Date.now }
             },
             text: { type: String, required: true, max: 400 }
@@ -17,6 +12,7 @@ class mensajesDaoMongo extends ContenedorMongo{
     }
     async saveMsjs(msj){
         try {
+            
             const result = await this.db.create(msj);
             return result
         } catch (error) {

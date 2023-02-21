@@ -12,9 +12,9 @@ class comprasDaoMongo extends ContenedorMongo{
 
     async crearCompra(){
         try{
-            const compra = await this.db.create({comprardor:{}}).lean()
+            const compra = await this.db.create({comprador:{}}).lean()
             logger.info("se creo la compra")
-            return compra
+            return "se creo la compra"
         }catch(error){
             logger.error(`error al crear compra: ${error}`)
         }

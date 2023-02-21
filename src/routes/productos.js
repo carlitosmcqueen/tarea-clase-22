@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-router.get("/",ProductosService.GET);
+router.get("/",authMw,ProductosService.GET);
 
 router.get("/:id",ProductosService.GETbyID)
 

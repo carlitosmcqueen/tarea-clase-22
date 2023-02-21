@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import isLoggedIn from "./middlewares/log.js";
+import passport from "passport";
 
 import daos from "./src/daos/index.js"
 const {mensajesDao} = await daos
@@ -53,15 +54,15 @@ const io = new Server(httpServer);
 // import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
 io.on("connection", async (socket) => {
     console.log("se conecto a chatSocket")
-    
-socket.emit("mensajes", await mensajesDao.getMsjs())
-             socket.on("mensajes", async (msj) => {
-                 await mensajesDao.saveMsjs(msj)
-                 io.sockets.emit("mensajes", await mensajesDao.getMsjs())
-                })
+    socket.emit("mensajes", await mensajesDao.getMsjs())
+    socket.on("mensajes", async (msj) => {
+        await mensajesDao.saveMsjs(msj)
+        io.sockets.emit("mensajes", await mensajesDao.getMsjs())
+    })
 })
 
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -77,8 +78,6 @@ const hbs= handlebars.engine({
 })
 app.engine("hbs",hbs)
 app.set("view engine","hbs")
-
-
 
 //----------------VISTAS---------------
 // aca cae donde todas las que no tiene link 
