@@ -12,6 +12,7 @@ const client = twilio(accountSID, authToken)
 export const GET = async (req, res) => {
     try {
         const data = await carritoDao.getAll()
+        
         res.status(200).send(data)
     } catch (err) {
         res.status(404).send(err);

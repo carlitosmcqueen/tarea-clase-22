@@ -5,6 +5,7 @@ const {compraDao,carritoDao} = await daos
 
 export const GET = async (req,res) => {
     try{
+        console.log(req.session.user)
         const data = await compraDao.getAll()
         res.status(200).send(data);
     }catch(err) {
@@ -24,8 +25,7 @@ export const GETbyID = async (req, res) => {
 }
 export const POSTCOMPRA = async (req, res) => {
     try {
-        const data = req.body;
-        await compraDao.crearCompra(data);
+        const data =await compraDao.crearCompra();
         res.status(200).send(data);
     } catch (err) {
         res.status(404).send(err);
@@ -41,31 +41,10 @@ export const POSTCARRITOinCOMPRA = async (req, res) => {
         } = req.params;
         const carritoCompra = await carritoDao.getById(id_carrito);
         const productosCarrito = carritoCompra.productos
-        await compraDao.llenarCompra(id, carritoCompra)
+        const data =await compraDao.llenarCompra(id, carritoCompra)
 
-        const transporter = createTransport({
-            host: "smtp.ethereal.email",
-            port: 587,
-            auth: {
-              user: "virginie.christiansen@ethereal.email",
-              pass: "NxBXFkZUZdEta8jezB",
-            },
 
-          });
-        
-          const opts = {
-            from: "virginie.christiansen@ethereal.email",
-            to: "garth.torp@ethereal.email",
-            subject:"Ticket de compra",
-            html:`<h1>Hola</h1> <br> <h2>usted a comprado los siguientes porductos ${productosCarrito}</h2>`,
-          }
-          try {
-            return transporter.sendMail(opts);
-            
-          } catch (e) {
-            console.error(e)
-          }
-        res.redirect("/")
+        res.status(200).send(data)
         
     } catch (err) {
         res.status(404).send(err);

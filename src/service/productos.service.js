@@ -17,12 +17,9 @@ export const GETbyID = async (req, res) => {
     try {
         const {id} = req.params;
         const data = await productosDao.getById(id);
-        
         res.status(200).send(data);
-
     } catch (err) {
         res.status(404).send(err);
-
     }
 }
 
@@ -35,7 +32,6 @@ export const GETbyTitle = async (req, res) => {
         res.send(err)
     }
 }
-
 
 export const POST = async (req, res) => {
     try {

@@ -1,5 +1,7 @@
 import ContenedorMongo from "../../contenedores/contenedorMongo.js"
 import logger from "../../../logs.js"
+import { CompositionHookInstance } from "twilio/lib/rest/video/v1/compositionHook.js"
+import { signedCookie } from "cookie-parser"
 
 class carritoDaoMongo extends ContenedorMongo{
     constructor(){
@@ -15,36 +17,40 @@ class carritoDaoMongo extends ContenedorMongo{
         }
     }
 
-    async addProduct(id, ProductoCompleto) {
+    addProduct = async (id, ProductoCompleto) => {
         try {
-            const carrito = await this.db.find({_id:id})
-            let product = carrito[0].productos
-            console.log(ProductoCompleto._id)
-            let productList = product.find(product => product._id == ProductoCompleto._id);
-
-
-            // if (product.hasOwnProperty(ProductoCompleto._id)) {
-            //      let cant = product[ProductoCompleto._id].cant + 1
-            //     let nuevo = { ProductoCompleto, cant }
-            //     product[ProductoCompleto._id] = nuevo
-            // } else {
-            //     let nuevo = { ProductoCompleto, cant: 1 }
-            //     product[ProductoCompleto._id] = nuevo
-            // }
-            const result = await this.db.updateOne({ _id: id }, { $push: { productos: ProductoCompleto, cant:1} })
-            logger.info("se agrego el productos al carrito")
-            return result;
+          const carrito = await this.db.findOne({ _id: id });
+          let productList = carrito.productos.find(
+            (product) => product.title === ProductoCompleto.title)
+          if (productList) {
+            productList.cant += 1;
+          } else {
+            ProductoCompleto.cant = 1;
+            carrito.productos.push(ProductoCompleto);
+          }
+          const result = await this.db.updateOne({ _id: id },{ productos: carrito.productos }).lean()
+          logger.info("se agrego el producto al carrito");
+          return result;
         } catch (error) {
-            logger.error(`error al añadir producto al carrito: ${error}`)
-
+          logger.error(`error al añadir producto al carrito: ${error}`);
         }
-    }
+      };
 
     async deleteProdById(id, ProductoCompleto){
         try{
-            const result = await this.db.updateOne({_id:id},{$pull:{productos:ProductoCompleto}}).lean()
+            const carrito = await this.db.findOne({ _id: id })
+            let productList = carrito.productos.find( (product) => product.title === ProductoCompleto.title)
+            if(productList){
+                productList.cant -= 1;
+                await this.db.updateOne({_id:id},{productos:carrito.productos}).lean()
+            }
+            if(productList.cant == 0){
+                console.log("se agoto")
+                await this.db.updateOne({_id:id},{$pull:{productos:ProductoCompleto}}).lean()
+            }
+            
             logger.info("se borro el producto del carrito")
-            return result
+            
         }catch(error){
             logger.error(`error al borrar producto del carrito: ${error}`)
 

@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 
 router.get("/",authMw,ProductosService.GET);
 
-router.get("/:id",ProductosService.GETbyID)
+router.get("/:id",authMw,ProductosService.GETbyID)
 
 router.get("/categoria/:title",ProductosService.GETbyTitle)
 

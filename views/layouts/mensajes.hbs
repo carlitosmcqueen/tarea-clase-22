@@ -24,6 +24,8 @@
     </nav>
 
     <h2 class="text-center">Mensajes</h2>
+    <p>{{usuarios}}
+    </p>
     <h6 id="compresion" class="text-center"></h6>
     <div class="container">
         <div class="row">
@@ -31,6 +33,14 @@
                 <div class="form-group" id="ingresoMensaje">
                     <label for="id">Usuario</label>
                     <input type="email" class="form-control" readonly="readonly" name="id" value={{user}}>
+                    <label for="to">to</label>
+                    <select to name="to" id="to">
+                        <option value="all">ALL</option>
+                        {{#each usuarios}}
+                        <option value={{this}}>{{this}}</option>
+                        {{/each}}
+                        </select>
+
                     <label for="message">Mensaje</label>
                     <textarea class="form-control" name="text" rows="3"></textarea>
                 </div>

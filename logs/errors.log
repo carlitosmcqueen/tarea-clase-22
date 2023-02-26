@@ -57,3 +57,16 @@
 [2023-02-20T01:07:44.765] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of undefined (reading 'productos')
 [2023-02-20T01:08:07.525] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of undefined (reading 'productos')
 [2023-02-20T01:10:51.171] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of undefined (reading 'productos')
+[2023-02-21T14:37:21.407] [ERROR] default - error al añadir producto al carrito: ReferenceError: si is not defined
+[2023-02-21T14:38:35.630] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of undefined (reading 'productos')
+[2023-02-21T14:38:36.676] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of undefined (reading 'productos')
+[2023-02-21T17:49:22.304] [ERROR] default - error al borrar producto del carrito: ReferenceError: result is not defined
+[2023-02-21T17:49:33.093] [ERROR] default - error al borrar producto del carrito: ReferenceError: result is not defined
+[2023-02-23T17:34:11.998] [ERROR] default - error al crear compra: TypeError: this.db.create(...).lean is not a function
+[2023-02-24T16:13:28.727] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "63f29083fce7b764bf32eed" (type string) at path "_id" for model "usuarios"
+[2023-02-24T16:13:35.503] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "63f29083fce7b764bf32eed" (type string) at path "_id" for model "usuarios"
+[2023-02-24T16:13:51.534] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "63f29083fce7b764bf32eed" (type string) at path "_id" for model "usuarios"
+[2023-02-24T16:13:59.778] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "63f29083fce7b764bf32eed" (type string) at path "_id" for model "usuarios"
+[2023-02-24T16:14:18.026] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "63f29083fce7b764bf32eed" (type string) at path "_id" for model "usuarios"
+[2023-02-24T16:14:19.561] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "63f29083fce7b764bf32eed" (type string) at path "_id" for model "usuarios"
+[2023-02-25T16:36:36.463] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "asdas" (type string) at path "_id" for model "usuarios"

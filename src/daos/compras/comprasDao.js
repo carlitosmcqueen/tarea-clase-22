@@ -1,9 +1,11 @@
 import ContenedorMongo from "../../contenedores/contenedorMongo.js"
+import logger from "../../../logs.js"
+
 
 class comprasDaoMongo extends ContenedorMongo{
     constructor(){
         super("compra",{
-            costumerId : String,
+        
             timestamp: { type: String, required: true, default: new Date() },
             carrito:{type:Array}
         })
@@ -12,9 +14,9 @@ class comprasDaoMongo extends ContenedorMongo{
 
     async crearCompra(){
         try{
-            const compra = await this.db.create({comprador:{}}).lean()
+            const compra = await this.db.create({carrito:[]})
             logger.info("se creo la compra")
-            return "se creo la compra"
+            return compra
         }catch(error){
             logger.error(`error al crear compra: ${error}`)
         }

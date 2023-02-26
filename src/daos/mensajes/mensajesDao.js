@@ -3,10 +3,9 @@ import ContenedorMongo from "../../contenedores/contenedorMongo.js";
 class mensajesDaoMongo extends ContenedorMongo{
     constructor(){
         super("mensajes",{
-            author: {
-                id: { type: String, required: true, max: 100 },
-                timestamp: { type: Date, default: Date.now }
-            },
+            user: { type: String, required: true, max: 100 },
+            timestamp: { type: Date, default: Date.now },
+            to: {type: String, default:"ALL"},
             text: { type: String, required: true, max: 400 }
         })
     }
@@ -26,6 +25,15 @@ class mensajesDaoMongo extends ContenedorMongo{
             return (mensajes);
         } catch (error) {
             throw new Error(error)
+        }
+    }
+
+    async getByUser(mail){
+        try{
+            const mensajeUser = await this.db.find({user : mail});
+            return mensajeUser
+        }catch(error){
+            console.error(error)
         }
     }
 } 

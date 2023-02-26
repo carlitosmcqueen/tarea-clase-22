@@ -2,43 +2,34 @@ import express from "express";
 import handlebars from "express-handlebars";
 import bodyParser from 'body-parser';
 import session from "express-session";
-import MongoStore from "connect-mongo";
-import isLoggedIn from "./middlewares/log.js";
 import passport from "passport";
+
+//session
+import sessionConfig from "./src/utils/session.js"
 
 import daos from "./src/daos/index.js"
 const {mensajesDao} = await daos
 //logger
+
+
 import logger from "./logs.js"
-//compression
-import compression from "compression"
-import {fork} from "child_process"
-import Yargs from "yargs/yargs";
 
 
-const yargs = Yargs(process.argv.slice(2))
+// import Yargs from "yargs/yargs";
 
-const port = yargs.alias({
-    p:"puerto",
-    m:"modo"
-}).default(
-    {puerto:8080,modo:"fork"}
-).argv
+
+// const yargs = Yargs(process.argv.slice(2))
+
+// const port = yargs.alias({
+//     p:"puerto",
+//     m:"modo"
+// }).default(
+//     {puerto:8080,modo:"fork"}
+// ).argv
 
 
 const app = express();
-const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
-app.use(session({
-    secret: "32m32e90me2393",
-    resave: true,
-    cookie:{maxAge: 60000},
-    saveUninitialized: false,
-    store: MongoStore.create({
-      mongoUrl: "mongodb+srv://CarlosCoder:coder123@cluster0.tl5cqne.mongodb.net/test",
-      mongoOptions: advancedOptions,
-    }),
-  })
-)
+app.use(session(sessionConfig))
 
 
 //-------------SERVER-------------
@@ -50,10 +41,9 @@ const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 
-//import randomProductos from "./src/utils/faker/fakerProductos.js";
-// import { saveMsjs, getMsjs } from './mongoMensajes/normalizar/mensajes.js';
 io.on("connection", async (socket) => {
     console.log("se conecto a chatSocket")
+
     socket.emit("mensajes", await mensajesDao.getMsjs())
     socket.on("mensajes", async (msj) => {
         await mensajesDao.saveMsjs(msj)
@@ -109,10 +99,6 @@ app.get("/", (req,res)=>{
     }catch (error) {
         console.log(error);
     }
-})
-
-app.get("/productos-test",isLoggedIn ,async (req,res)=>{
-    res.render("main",{layout:"productos-test"})
 })
 
 

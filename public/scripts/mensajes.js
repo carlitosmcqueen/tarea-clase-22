@@ -1,23 +1,19 @@
 const socket = io.connect()
 
-
 const ingresoMensaje = document.getElementById("ingresoMensaje");
 const botonEnviar = document.getElementById("botonEnviar")
-const usuario = document.getElementById("usuario")
-
+const to = document.getElementById("to")
 
 socket.on('mensajes', (msj) => {
     renderMsj(msj);
-    renderComp(msj, msj)
 
 })
 
 botonEnviar.addEventListener('click', (e) => {
-    console.log("se envio mensaje")
     const mensaje = {
-        author: {
-            id: ingresoMensaje.children.id.value,
-        },
+        
+        user: ingresoMensaje.children.id.value,
+        to: to.value,
         text: ingresoMensaje.children.text.value
     }
     socket.emit('mensajes', mensaje);
@@ -31,8 +27,13 @@ const fileSchema = [msjSchema]
 
 const renderMsj = (msj) => {
     const html = msj.map(element => ` <article>
-    <span class="id">${element.author.id}</span><span class="time">[${element.author.timestamp}]:</span><span clas="text">${element.text}</span><img src="${element.author.avatar}" alt="avatar" class="avatar">
-                    </article>`).join(" ")
+    <br>
+    <span class="id">${element.user}</span>
+    <br>
+    <span class="to">${element.to}</span>
+    <br>
+    <span class="time">[${element.timestamp}]:</span>
+    <span class="text">${element.text}</span> </article>`).join(" ")
     document.getElementById("mensajes").innerHTML = html;
 
     return false
@@ -40,11 +41,11 @@ const renderMsj = (msj) => {
 
 
 
-const renderComp = (msj, denormMsjs) => {
-    const comp = document.getElementById("compresion");
-    const denormMsjsLength = (JSON.stringify(denormMsjs)).length;
-    const msjLength = (JSON.stringify(msj)).length;
-    const compresion = ((msjLength - denormMsjsLength) / msjLength * 100).toFixed(2);
-    comp.innerHTML = `(Compresion: ${compresion}%)`;
-}
+// const renderComp = (msj, denormMsjs) => {
+//     const comp = document.getElementById("compresion");
+//     const denormMsjsLength = (JSON.stringify(denormMsjs)).length;
+//     const msjLength = (JSON.stringify(msj)).length;
+//     const compresion = ((msjLength - denormMsjsLength) / msjLength * 100).toFixed(2);
+//     comp.innerHTML = `(Compresion: ${compresion}%)`;
+// }
 
