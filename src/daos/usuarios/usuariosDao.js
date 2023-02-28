@@ -15,7 +15,7 @@ class UsuarioDaoMongo extends ContenedorMongo {
     }
     register = async (req,username,password,done) => {
         try{
-            const {username,password,edad,telefono,imagen} = req.body
+            const {edad,telefono,imagen} = req.body
             const user = await this.db.findOne({username})
             if(user) return done(null,false)
             const saveUser = await this.db.create({username,password: passHashed(password),edad,telefono,imagen})

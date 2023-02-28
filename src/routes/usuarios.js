@@ -42,7 +42,7 @@ router.get("/loginError", (req, res) => {
 })
 
 router.get('/register', (req, res) => {
-    res.render('main', {layout: 'register',PORT:PORT})
+    res.render('main', {layout: 'register'})
 })
   
 router.post('/register', passport.authenticate('signup', { failureRedirect: "/registerError" }), (req, res) => {
