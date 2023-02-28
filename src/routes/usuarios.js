@@ -1,7 +1,6 @@
 import express from 'express'
 import { Router } from 'express'
-import daos from "../daos/index.js"
-const {usuariosDao,mensajesDao} = await daos
+
 //nuevo intento 
 import passport from '../utils/passport.js'
 
@@ -48,13 +47,7 @@ router.get('/register', (req, res) => {
 })
   
 router.post('/register', passport.authenticate('signup', { failureRedirect: "/registerError" }), (req, res) => {
-    try{
-        console.log("nice")
-    }catch(e){
-        console.error(e)
-
-    }
-    res.redirect('/');
+    res.redirect("/login")
 });
 
 router.get("/registerError",(req, res)=>{
@@ -63,30 +56,9 @@ router.get("/registerError",(req, res)=>{
   
 router.get('/logout' ,(req, res) => {
     res.render('main', {layout: 'logout', user : req.session.user})
-})
-
-
-// -------------------------------------- aca las vistas de carrito y productos
-router.get("/productos",authMw,(req, res)=>{
-    res.render('main', {layout: 'productos',user: req.session.user})
-
-})
-
-
-router.get("/carrito",(req, res)=>{
-    res.render('main', {layout: 'carrito',user: req.session.user})
-    
-})
-router.get("/chat",async (req, res)=>{
-    const usuarios = await usuariosDao.getAll()
-    const usuariosData = usuarios.map(obj => obj.username)
-    res.render('main', {layout: 'mensajes',user: req.session.user, usuarios: usuariosData})
-})
-router.get("/chat/:mail",async(req, res) => {
-    const {mail} = req.params
-    const data = await mensajesDao.getByUser(mail)
-    res.status(200).send(data);
-
+    if(req.session){
+        req.session.destroy();
+    }
 })
 
 

@@ -1,9 +1,0 @@
-Analisis de rendimiento
-node --prof index.js
-
-Para ver el codigo isolate 
-node --prof-process info.log > result_info.txt
-
-
-artillery quick --count 50 -n 20 http://localhost:8080/info >result_info.txt
-

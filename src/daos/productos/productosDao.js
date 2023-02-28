@@ -9,6 +9,7 @@ class productosDaoMongo extends ContenedorMongo{
             description: {type:String,required:true},
         })
     }
+    
     async getByCategory(title){
         try {
             const result = await this.db.find({ title: title }).lean()

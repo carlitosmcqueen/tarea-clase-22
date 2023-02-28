@@ -11,7 +11,6 @@ socket.on('mensajes', (msj) => {
 
 botonEnviar.addEventListener('click', (e) => {
     const mensaje = {
-        
         user: ingresoMensaje.children.id.value,
         to: to.value,
         text: ingresoMensaje.children.text.value
@@ -27,25 +26,19 @@ const fileSchema = [msjSchema]
 
 const renderMsj = (msj) => {
     const html = msj.map(element => ` <article>
+    <div id="userTO">
+        <span class="id" id="username">user: ${element.user}</span>
+        <span class="to" id="to">to: ${element.to}</span>
+    </div>
+    <span class="time" id="time">[${element.timestamp}]:</span>
     <br>
-    <span class="id">${element.user}</span>
-    <br>
-    <span class="to">${element.to}</span>
-    <br>
-    <span class="time">[${element.timestamp}]:</span>
-    <span class="text">${element.text}</span> </article>`).join(" ")
+    <div id="prueba">
+    <span class="text" id="text">${element.text}</span> </article>
+    </div>`
+    
+    ).join(" ")
+    
     document.getElementById("mensajes").innerHTML = html;
 
     return false
 }
-
-
-
-// const renderComp = (msj, denormMsjs) => {
-//     const comp = document.getElementById("compresion");
-//     const denormMsjsLength = (JSON.stringify(denormMsjs)).length;
-//     const msjLength = (JSON.stringify(msj)).length;
-//     const compresion = ((msjLength - denormMsjsLength) / msjLength * 100).toFixed(2);
-//     comp.innerHTML = `(Compresion: ${compresion}%)`;
-// }
-

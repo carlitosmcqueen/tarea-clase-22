@@ -4,28 +4,15 @@ import bodyParser from 'body-parser';
 import session from "express-session";
 import passport from "passport";
 
-//session
-import sessionConfig from "./src/utils/session.js"
 
+import sessionConfig from "./src/utils/session.js"
 import daos from "./src/daos/index.js"
 const {mensajesDao} = await daos
-//logger
+
 
 
 import logger from "./logs.js"
 
-
-// import Yargs from "yargs/yargs";
-
-
-// const yargs = Yargs(process.argv.slice(2))
-
-// const port = yargs.alias({
-//     p:"puerto",
-//     m:"modo"
-// }).default(
-//     {puerto:8080,modo:"fork"}
-// ).argv
 
 
 const app = express();
@@ -76,11 +63,13 @@ import { productosRouter } from "./src/routes/productos.js";
 import { usuariosRouter } from "./src/routes/usuarios.js";
 import { carritoRouter } from "./src/routes/carrito.js";
 import {compraRouter} from "./src/routes/compra.js";
+import {mensajesRouter} from "./src/routes/mensajes.js";
 
 app.use("/",usuariosRouter)
 app.use("/api/productos",productosRouter)
 app.use("/api/carrito",carritoRouter)
 app.use("/api/compra",compraRouter)
+app.use("/chat",mensajesRouter)
 
 
 app.use((req, res, next) => {

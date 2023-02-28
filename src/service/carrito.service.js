@@ -24,7 +24,6 @@ export const GETbyID = async (req, res) => {
         const {id} = req.params;
         let data = await carritoDao.getById(id);
         res.status(200).send(data)
-
     } catch (err) {
         res.status(404).send(err);
 

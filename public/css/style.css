@@ -1,0 +1,40 @@
+
+#mensajes{
+  height: 40vh;
+  overflow-y:scroll;
+  
+}
+
+#ingresoMensaje{
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border:  2px solid;
+  border-radius: 5px;
+  background-color:#5296fd;
+  padding: 5px;
+}
+
+label{
+  font-size: 20px;
+}
+span{
+  font-size:  20px;
+  width: 13vw;
+}
+
+#username {
+  color: red;
+}
+#to{
+  color:blue
+}
+#time{
+  color: rgb(13, 155, 13);
+  font-size: 13px;
+}
+
+#prueba{
+  background-color:rgba(83, 226, 245, 0.42)
+}

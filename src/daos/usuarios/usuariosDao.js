@@ -13,36 +13,32 @@ class UsuarioDaoMongo extends ContenedorMongo {
             imagen:String,
         });
     }
-
-    async register (req,username,password,done) {
+    register = async (req,username,password,done) => {
         try{
-            const {edad,telefono,imagen} = req.body
+            const {username,password,edad,telefono,imagen} = req.body
             const user = await this.db.findOne({username})
             if(user) return done(null,false)
             const saveUser = await this.db.create({username,password: passHashed(password),edad,telefono,imagen})
             mail("registro",saveUser)
             done(null,saveUser)
         }catch(err){
-            logger.error("error al registrar usuario")
+            logger.error(`error al registar usuario : ${err}`)
         }
 
 
-
     }
-    async login (username,password,done){
+    login = async (username, password,done) =>{
         try{
             const user = await this.db.findOne({username})
             if(!user) return done(null,false)
             validatePass(password,user.password) ? done(null,user) : done(null,false)
         }catch(err){
-            logger.error("error al loguear")
+            logger.error("error al iniciar session")
         }
     }
-
-    async find(id,done){
+    find = async (id,done) => {
         try{
             this.db.findById(id,done)
-            
         }catch(err){
             logger.error("error al deserialiar")
         }
