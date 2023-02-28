@@ -4,7 +4,6 @@ import { Router } from 'express'
 //nuevo intento 
 import passport from '../utils/passport.js'
 
-import authMw from "../../middlewares/log.js";
 import twilio from 'twilio';
 import * as dotenv from "dotenv"
 dotenv.config()
@@ -22,10 +21,10 @@ app.use(express.json())
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+const PORT = process.env.PORT
 // ---------------------------------------------------------- para los loguearte  -------------------------------
 router.get("/login", async (req,res)=>{
-    res.render("main",{layout:"login"})
+    res.render("main",{layout:"login",PORT:PORT})
 
 })
 
@@ -43,7 +42,7 @@ router.get("/loginError", (req, res) => {
 })
 
 router.get('/register', (req, res) => {
-    res.render('main', {layout: 'register'})
+    res.render('main', {layout: 'register',PORT:PORT})
 })
   
 router.post('/register', passport.authenticate('signup', { failureRedirect: "/registerError" }), (req, res) => {
