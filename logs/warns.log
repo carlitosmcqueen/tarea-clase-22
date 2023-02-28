@@ -495,3 +495,17 @@
 [2023-02-28T12:55:04.842] [WARN] default - Failed Requist GET at /chat/css/style.css
 [2023-02-28T12:55:05.009] [WARN] default - Failed Requist GET at /favicon.ico
 [2023-02-28T12:55:12.309] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:09:08.674] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:09:13.257] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:30:39.845] [WARN] default - Failed Requist POST at /
+[2023-02-28T14:30:55.672] [ERROR] default - error al guardar archivo: ValidationError: title: Path `title` is required., price: Path `price` is required., thumbnail: Path `thumbnail` is required., description: Path `description` is required., category: Path `category` is required.
+[2023-02-28T14:34:50.077] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:36:41.602] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:36:44.907] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:36:46.773] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:36:48.862] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:36:49.925] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:37:00.901] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:37:03.021] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:37:04.858] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T14:37:10.974] [WARN] default - Failed Requist GET at /favicon.ico

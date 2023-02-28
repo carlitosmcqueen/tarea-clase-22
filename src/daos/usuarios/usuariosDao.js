@@ -30,6 +30,7 @@ class UsuarioDaoMongo extends ContenedorMongo {
     login = async (username, password,done) =>{
         try{
             const user = await this.db.findOne({username})
+            
             if(!user) return done(null,false)
             validatePass(password,user.password) ? done(null,user) : done(null,false)
         }catch(err){

@@ -6,3 +6,4 @@
 [2023-02-28T01:01:59.952] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
 [2023-02-28T01:02:15.681] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
 [2023-02-28T01:02:42.535] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
+[2023-02-28T14:30:55.672] [ERROR] default - error al guardar archivo: ValidationError: title: Path `title` is required., price: Path `price` is required., thumbnail: Path `thumbnail` is required., description: Path `description` is required., category: Path `category` is required.
