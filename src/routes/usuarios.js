@@ -4,14 +4,14 @@ import { Router } from 'express'
 //nuevo intento 
 import passport from '../utils/passport.js'
 
-import twilio from 'twilio';
+//import twilio from 'twilio';
 import * as dotenv from "dotenv"
 dotenv.config()
 
 //twilio
 const accountSID = "AC68263a028427d38a73d6e3d832cdc0ae"
 const authToken = process.env.TWILIO
-const client = twilio(accountSID, authToken)
+//const client = twilio(accountSID, authToken)
 
 const router = Router()
 const app = express()
