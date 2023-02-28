@@ -2,7 +2,7 @@ import * as dotenv from "dotenv"
 dotenv.config()
 
 const daos ={
-    mongo: async()=>{
+    MONGO: async()=>{
         const {default: productosDaoMongo} = await import("./productos/productosDao.js")
         const {default: usuariosDaoMongo} = await import("./usuarios/usuariosDao.js")
         const {default: carritoDaoMongo} = await import("./carrito/carritoDao.js")
