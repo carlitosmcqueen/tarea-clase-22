@@ -15,7 +15,7 @@ router.get("/",authMw,ProductosService.GET);
 
 router.get("/:id",authMw,ProductosService.GETbyID)
 
-router.get("/categoria/:title",ProductosService.GETbyTitle)
+router.get("/categoria/:category",ProductosService.GETbyCategory)
 
 router.post("/", ProductosService.POST);
 

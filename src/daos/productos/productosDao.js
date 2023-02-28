@@ -7,12 +7,13 @@ class productosDaoMongo extends ContenedorMongo{
             price: {type:Number,required:true},
             thumbnail: {type:String,required:true},
             description: {type:String,required:true},
+            category:{type:String,required:true}
         })
     }
     
-    async getByCategory(title){
+    async getByCategory(category){
         try {
-            const result = await this.db.find({ title: title }).lean()
+            const result = await this.db.find({ category: category }).lean()
             return result;
         } catch (error) {
             logger.error(`error al obtener el dato por su id: ${error}`)

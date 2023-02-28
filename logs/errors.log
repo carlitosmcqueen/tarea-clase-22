@@ -1,3 +1,8 @@
 [2023-02-27T15:29:48.475] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "asdas" (type string) at path "_id" for model "carrito"
 [2023-02-27T16:25:59.639] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
 [2023-02-27T16:42:21.670] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-02-27T23:31:27.025] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-02-27T23:42:27.939] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-02-28T01:01:59.952] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
+[2023-02-28T01:02:15.681] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
+[2023-02-28T01:02:42.535] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.

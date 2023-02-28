@@ -447,3 +447,38 @@
 [2023-02-27T20:26:19.344] [WARN] default - Failed Requist GET at /chat/css/style.css
 [2023-02-27T20:26:19.514] [WARN] default - Failed Requist GET at /favicon.ico
 [2023-02-27T20:30:14.662] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:30:32.684] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:30:41.474] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:30:43.228] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:31:27.025] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-02-27T23:31:29.588] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:31:33.253] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:41:07.630] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:41:14.363] [WARN] default - Failed Requist POST at /login
+[2023-02-27T23:41:14.552] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:41:44.813] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:41:47.946] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:42:02.197] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:42:05.767] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:42:16.924] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:42:19.009] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:42:19.996] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:42:27.939] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-02-27T23:42:35.616] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:42:37.156] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-27T23:42:41.850] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T01:01:59.952] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
+[2023-02-28T01:02:15.681] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
+[2023-02-28T01:02:42.535] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
+[2023-02-28T01:07:45.389] [WARN] default - Failed Requist POST at /
+[2023-02-28T01:10:12.129] [WARN] default - Failed Requist POST at /
+[2023-02-28T01:10:37.409] [WARN] default - Failed Requist GET at /api/productos/category/verdura
+[2023-02-28T01:11:40.196] [WARN] default - Failed Requist POST at /
+[2023-02-28T01:11:59.028] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T01:12:02.802] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T01:12:06.697] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T01:12:12.947] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T01:12:17.492] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T01:12:21.854] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T01:12:46.579] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T01:12:50.440] [WARN] default - Failed Requist GET at /favicon.ico

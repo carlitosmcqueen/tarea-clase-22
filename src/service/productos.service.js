@@ -23,10 +23,10 @@ export const GETbyID = async (req, res) => {
     }
 }
 
-export const GETbyTitle = async (req, res) => {
+export const GETbyCategory = async (req, res) => {
     try{
-        const {title} = req.params
-        const data = await productosDao.getByCategory(title)
+        const {category} = req.params
+        const data = await productosDao.getByCategory(category)
         res.send(data)
     }catch(err){
         res.send(err)
@@ -35,8 +35,8 @@ export const GETbyTitle = async (req, res) => {
 
 export const POST = async (req, res) => {
     try {
-        const {title,price,thumbnail,description} = req.body;
-        const producto =  new guardarProducto({title,price,thumbnail,description})
+        const {title,price,thumbnail,description,category} = req.body;
+        const producto =  new guardarProducto({title,price,thumbnail,description,category})
         await productosDao.save(producto);
         res.status(201).send(producto);
         
@@ -49,7 +49,7 @@ export const PUT = async (req, res) => {
     try {
         const {title,price,thumbnail,description} = req.body;
         const {id} = req.params;
-        const productoMod = new guardarProducto({title,price,thumbnail,description})
+        const productoMod = new guardarProducto({title,price,thumbnail,description,category})
         const idInt = parseInt(id);
         const productoUpdate = {id,...productoMod}
         await productosDao.updateById(id,productoUpdate)

@@ -9,7 +9,8 @@ import sessionConfig from "./src/utils/session.js"
 import daos from "./src/daos/index.js"
 const {mensajesDao} = await daos
 
-
+import * as dotenv from "dotenv"
+dotenv.config()
 
 import logger from "./logs.js"
 
