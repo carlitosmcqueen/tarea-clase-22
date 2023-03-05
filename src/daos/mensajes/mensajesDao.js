@@ -9,6 +9,7 @@ class mensajesDaoMongo extends ContenedorMongo{
             text: { type: String, required: true, max: 400 }
         })
     }
+
     saveMsjs = async (msj)=>{
         try {
             const result = await this.db.create(msj);
@@ -20,7 +21,7 @@ class mensajesDaoMongo extends ContenedorMongo{
     getMsjs = async()=>{
         try {
             const mensajes = await this.db.find({}).lean()
-            return (mensajes);
+            return mensajes
         } catch (error) {
             throw new Error(error)
         }
@@ -30,7 +31,7 @@ class mensajesDaoMongo extends ContenedorMongo{
             const mensajeUser = await this.db.find({user : mail}).lean()
             return mensajeUser
         }catch(error){
-            console.error(error)
+            return "error al obtener usuario"
         }
     }
 } 

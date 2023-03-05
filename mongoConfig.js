@@ -1,6 +1,10 @@
+import * as dotenv from "dotenv"
+dotenv.config()
+
+
 const config ={
     mongo :{
-        url : "mongodb+srv://CarlosCoder:coder123@cluster0.tl5cqne.mongodb.net/test",
+        url : process.env.DATABASE,
         options : {
             useNewUrlParser: true,
             useUnifiedTopology: true,

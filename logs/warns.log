@@ -875,3 +875,81 @@
 [2023-03-04T20:54:05.745] [ERROR] default - error al registar usuario : ValidationError: isAdmin: Path `isAdmin` is required.
 [2023-03-04T20:55:07.724] [ERROR] default - error al registar usuario : ValidationError: isAdmin: Path `isAdmin` is required.
 [2023-03-04T20:55:37.454] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T22:23:56.912] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T22:39:49.964] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T22:39:52.363] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T22:39:52.553] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T22:39:52.745] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T22:39:52.928] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T22:40:12.584] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T22:52:28.738] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-04T22:52:44.196] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-04T22:52:50.728] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T23:16:31.452] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T23:40:04.941] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:41:43.370] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:43:04.687] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:43:07.267] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:43:52.737] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:44:28.202] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:44:39.794] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:45:10.313] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:45:17.332] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:45:42.953] [WARN] default - Failed Requist POST at /loginError
+[2023-03-04T23:46:34.538] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:46:42.674] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:48:21.042] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:49:36.799] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:51:06.979] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:52:30.275] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:54:01.346] [WARN] default - Failed Requist POST at /
+[2023-03-04T23:57:26.217] [WARN] default - Failed Requist POST at /
+[2023-03-05T00:00:58.652] [WARN] default - Failed Requist POST at /
+[2023-03-05T00:01:34.717] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:01:54.786] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:02:05.181] [WARN] default - Failed Requist POST at /api/carrito/producto
+[2023-03-05T00:02:23.590] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:02:31.767] [WARN] default - Failed Requist POST at /
+[2023-03-05T00:02:42.211] [WARN] default - Failed Requist GET at /api/carritp
+[2023-03-05T00:02:51.252] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "producto" (type string) at path "_id" for model "carrito"
+[2023-03-05T00:02:55.419] [WARN] default - Failed Requist GET at /api/carrito/producto/63bb2c6c3a0dace2b76929bd
+[2023-03-05T00:03:00.565] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:04:06.895] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:04:21.377] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:05:54.666] [WARN] default - Failed Requist POST at /
+[2023-03-05T00:07:16.357] [WARN] default - Failed Requist POST at /ap/carrito/6404074941c43bf8014b770d
+[2023-03-05T00:07:23.064] [WARN] default - Failed Requist POST at /api/carrito/6404074941c43bf8014b770d
+[2023-03-05T00:07:51.544] [WARN] default - Failed Requist POST at /api/carrito/6403d55ea51ecdfdcb267772
+[2023-03-05T00:08:57.658] [WARN] default - Failed Requist POST at /api/carrito/63bf218bbe544e0e8d3df30b
+[2023-03-05T00:11:34.578] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'title')
+[2023-03-05T00:11:52.406] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'title')
+[2023-03-05T00:13:38.136] [WARN] default - Failed Requist GET at /api/carrito/producto/63bf218bbe544e0e8d3df30b
+[2023-03-05T00:16:04.257] [WARN] default - Failed Requist POST at /
+[2023-03-05T00:25:42.056] [WARN] default - Failed Requist POST at /api/carrito/producto63bb2c6c3a0dace2b76929bd
+[2023-03-05T00:28:52.417] [WARN] default - Failed Requist POST at /
+[2023-03-05T00:40:01.586] [WARN] default - Failed Requist POST at /
+[2023-03-05T00:48:17.398] [WARN] default - Failed Requist POST at /api/carrito/6403d3372a25838f79348cc3
+[2023-03-05T00:50:50.083] [WARN] default - Failed Requist POST at /
+[2023-03-05T01:00:45.987] [WARN] default - Failed Requist DELETE at /api/carrito/producto/63bb2c6c3a0dace2b76929bd
+[2023-03-05T01:02:02.558] [WARN] default - Failed Requist POST at /
+[2023-03-05T01:02:52.502] [ERROR] default - error al borrar producto del carrito: TypeError: Cannot read properties of undefined (reading 'cant')
+[2023-03-05T01:14:27.199] [WARN] default - Failed Requist POST at /
+[2023-03-05T01:16:01.194] [WARN] default - Failed Requist POST at /
+[2023-03-05T01:26:45.878] [WARN] default - Failed Requist POST at /
+[2023-03-05T01:31:43.096] [WARN] default - Failed Requist POST at /api/compra/6402c51e3cca49dd76d3db68
+[2023-03-05T01:41:58.107] [WARN] default - Failed Requist POST at /api/compra/6402c53a93680d383c28bd15
+[2023-03-05T02:05:40.222] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-05T02:05:51.557] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-05T02:10:37.216] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-05T02:43:59.137] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-05T02:44:25.663] [WARN] default - Failed Requist POST at /
+[2023-03-05T02:44:43.965] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required., description: Path `description` is required., thumbnail: Path `thumbnail` is required., price: Path `price` is required., title: Path `title` is required.
+[2023-03-05T02:45:47.541] [ERROR] default - error al crear compra: ValidationError: domicilio: Path `domicilio` is required.
+[2023-03-05T02:46:05.777] [ERROR] default - error al crear compra: ReferenceError: subject is not defined
+[2023-03-05T02:46:58.875] [ERROR] default - error al crear compra: ReferenceError: subject is not defined
+[2023-03-05T02:48:46.589] [ERROR] default - error al crear compra: ReferenceError: subject is not defined
+[2023-03-05T02:50:26.366] [ERROR] default - error al crear compra: ReferenceError: html is not defined
+[2023-03-05T02:50:27.635] [ERROR] default - error al crear compra: ReferenceError: html is not defined
+[2023-03-05T02:51:45.301] [WARN] default - Failed Requist POST at /api/carrito/productos/63bb2c6c3a0dace2b76929bd
+[2023-03-05T02:56:08.721] [WARN] default - Failed Requist POST at /
+[2023-03-05T02:56:27.946] [ERROR] default - error al crear compra: ValidationError: domicilio: Path `domicilio` is required.

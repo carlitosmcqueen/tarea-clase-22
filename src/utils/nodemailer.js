@@ -2,10 +2,10 @@ import { createTransport } from "nodemailer"
 
 import * as dotenv from "dotenv"
 dotenv.config()
-import logger from "../../logs.js"
+
 
 function mail(tipo,datos){
-    let getEmail
+    let getEmail,subject,html
     if (tipo == "registro"){
         
         getEmail = datos.username,
@@ -35,8 +35,8 @@ function mail(tipo,datos){
             host:"smtp.ethereal.email",
             port:587,
             auth:{
-                user: "virginie.christiansen@ethereal.email",
-                pass: "NxBXFkZUZdEta8jezB",
+                user: process.env.USERMAIL,
+                pass: process.env.PASSMAIL,
             }
         })
 
@@ -49,7 +49,7 @@ function mail(tipo,datos){
 
         try{
             const info = await transporter.sendMail(opts)
-
+            console.log(info)
         }catch(e){
             console.error(e)
         }

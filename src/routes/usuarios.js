@@ -16,8 +16,7 @@ app.use(passport.session());
 // ---------------------------------------------------------- para los loguearte  -------------------------------
 router.get("/login", UsuariosService.GETLOGIN)
 
-router.post(
-    "/login",passport.authenticate("login", { failureRedirect: "/loginError" }),UsuariosService.POSTLOGIN)
+router.post("/login",passport.authenticate("login", { failureRedirect: "/loginError" }),UsuariosService.POSTLOGIN)
 
 router.get("/loginError", UsuariosService.LOGINERROR)
 

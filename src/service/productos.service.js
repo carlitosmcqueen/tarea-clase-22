@@ -26,9 +26,9 @@ export const GETbyCategory = async (req, res) => {
     try{
         const {category} = req.params
         const data = await productosDao.getByCategory(category)
-        res.send(data)
+        res.status(200).send(data)
     }catch(err){
-        res.send(err)
+        res.status(404).send(err)
     }
 }
 
@@ -37,7 +37,6 @@ export const POST = async (req, res) => {
         const data = req.body
         await productosDao.save(data);
         res.status(201).send(data);
-        
     } catch (err) {
         res.status(404).send(err);
     }
@@ -63,9 +62,7 @@ export const DELETE = async (req, res) => {
             }else{
                 res.status(404).send({err: "producto no encontrado"})
             }
-
     } catch (err) {
         res.status(404).send(err);
-
     }
 }

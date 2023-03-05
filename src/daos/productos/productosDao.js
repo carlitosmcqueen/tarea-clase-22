@@ -1,4 +1,5 @@
 import ContenedorMongo from "../../contenedores/contenedorMongo.js"
+import logger from "../../../logs.js"
 
 class productosDaoMongo extends ContenedorMongo{
     constructor(){
@@ -16,7 +17,7 @@ class productosDaoMongo extends ContenedorMongo{
             const result = await this.db.find({ category: category })
             return result;
         } catch (error) {
-            logger.error(`error al obtener el dato por su id: ${error}`)
+            logger.error(`error al obtener el dato por su categoria: ${error}`)
 
         }
     } 

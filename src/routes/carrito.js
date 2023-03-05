@@ -1,5 +1,6 @@
 import express from "express"
 import {Router} from "express"
+import {authMw,isAdmin} from "../middlewares/middleware.js";
 
 import * as CarritoService from "../service/carrito.service.js"
 
@@ -9,23 +10,20 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-router.get("/", CarritoService.GET);
+//obtener carrito
+router.get("/", authMw,CarritoService.GET);
+router.get("/:id", authMw,CarritoService.GETbyID);
 
-router.get("/:id", CarritoService.GETbyID);
+//manejo del usuario de los productos
+router.post("/producto/:id_producto",authMw ,CarritoService.POSTPRODUCTACTIVE)
 
+router.delete("/producto/:id_producto",authMw, CarritoService.DELETEPRODUCTACTIVE)
 
-router.post("/",CarritoService.POSTCART);
-
-
-router.post("/:id/productos/:id_producto", CarritoService.POSTPRODUCT);
-
-router.post("/producto/:id_producto", CarritoService.POSTPRODUCTACTIVE)
-
-router.post("/producto/:id_producto", CarritoService.DELETEPRODUCTACTIVE)
-
-router.put("/:id",CarritoService.PUTCART)
-
-router.delete("/:id/productos/:id_prod", CarritoService.DELETEPRODUCT);
+//metodos manuales 
+router.post("/",authMw,isAdmin,CarritoService.POSTCART);
+router.post("/:id/productos/:id_producto", isAdmin,CarritoService.POSTPRODUCT);
+router.put("/:id",isAdmin,CarritoService.PUTCART)
+router.delete("/:id/productos/:id_prod",isAdmin, CarritoService.DELETEPRODUCT);
 
 
 

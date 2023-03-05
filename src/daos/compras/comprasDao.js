@@ -16,11 +16,11 @@ class comprasDaoMongo extends ContenedorMongo{
         
     }
 
-    async crearCompra(user,idUser,prod){
+    async crearCompra(user,idUser,prod,domicilio){
         try{
             const compra = await this.db.create({user:user,idUser:idUser,productos:prod, domicilio})
-            console.log(compra)
             logger.info("se creo la compra")
+            mail("compra",compra)
             return compra
         }catch(error){
             logger.error(`error al crear compra: ${error}`)
@@ -39,6 +39,7 @@ class comprasDaoMongo extends ContenedorMongo{
     async getByUser(user){
         try {
             const result = await this.db.find({ user: user })
+            logger.info("se obtuvo el usuario")
             return result;
         } catch (error) {
             logger.error(`error al obtener el dato por su id: ${error}`)
@@ -49,6 +50,7 @@ class comprasDaoMongo extends ContenedorMongo{
     async deleteCompra (id) {
         try {
             const result = await this.db.deleteOne({_id: id}).lean()
+            logger.info(`se borro correctamente la compra ${id}`)
             return result
         }catch(e){
             logger.error(`error al borrar el carrito : ${e}`)

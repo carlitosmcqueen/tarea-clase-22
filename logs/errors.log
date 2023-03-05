@@ -166,3 +166,29 @@
 [2023-03-04T20:54:05.745] [ERROR] default - error al registar usuario : ValidationError: isAdmin: Path `isAdmin` is required.
 [2023-03-04T20:55:07.724] [ERROR] default - error al registar usuario : ValidationError: isAdmin: Path `isAdmin` is required.
 [2023-03-04T20:55:37.454] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T23:43:07.267] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:43:52.737] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:44:39.794] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:45:10.313] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:45:17.332] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-04T23:46:42.674] [ERROR] default - error al crear compra: ReferenceError: domicilio is not defined
+[2023-03-05T00:01:34.717] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:01:54.786] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:02:23.590] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:02:51.252] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "producto" (type string) at path "_id" for model "carrito"
+[2023-03-05T00:03:00.565] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:04:06.895] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:04:21.377] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-05T00:11:34.578] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'title')
+[2023-03-05T00:11:52.406] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'title')
+[2023-03-05T01:02:52.502] [ERROR] default - error al borrar producto del carrito: TypeError: Cannot read properties of undefined (reading 'cant')
+[2023-03-05T02:10:37.216] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-05T02:43:59.137] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-05T02:44:43.965] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required., description: Path `description` is required., thumbnail: Path `thumbnail` is required., price: Path `price` is required., title: Path `title` is required.
+[2023-03-05T02:45:47.541] [ERROR] default - error al crear compra: ValidationError: domicilio: Path `domicilio` is required.
+[2023-03-05T02:46:05.777] [ERROR] default - error al crear compra: ReferenceError: subject is not defined
+[2023-03-05T02:46:58.875] [ERROR] default - error al crear compra: ReferenceError: subject is not defined
+[2023-03-05T02:48:46.589] [ERROR] default - error al crear compra: ReferenceError: subject is not defined
+[2023-03-05T02:50:26.366] [ERROR] default - error al crear compra: ReferenceError: html is not defined
+[2023-03-05T02:50:27.635] [ERROR] default - error al crear compra: ReferenceError: html is not defined
+[2023-03-05T02:56:27.946] [ERROR] default - error al crear compra: ValidationError: domicilio: Path `domicilio` is required.

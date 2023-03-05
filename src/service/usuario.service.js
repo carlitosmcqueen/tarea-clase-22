@@ -1,5 +1,4 @@
 
-
 export const GETLOGIN = async (req,res) => {
     try{
         res.render("main",{layout:"login"})
@@ -7,7 +6,6 @@ export const GETLOGIN = async (req,res) => {
         console.log(e)
     }
 }
-
 
 export const POSTLOGIN = async (req,res) => {
     
@@ -22,7 +20,6 @@ export const GETREGISTER = async (req,res) => {
     res.render('main', {layout: 'register'})
 }
 export const POSTREGISTER = async (req,res) => {
-    
     res.redirect("/login")
 }
 export const REGISTERERROR = async (req, res) => {

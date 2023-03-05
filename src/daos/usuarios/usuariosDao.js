@@ -12,7 +12,7 @@ class UsuarioDaoMongo extends ContenedorMongo {
             telefono:String,
             imagen:String,
             carrito:Array,
-            isAdmin: {type: Boolean, default: false, required: true},
+            
         });
     }
     register = async (req,username,password,carrito,done) => {
@@ -23,6 +23,7 @@ class UsuarioDaoMongo extends ContenedorMongo {
             const saveUser = await this.db.create({username,password: passHashed(password),edad,telefono,imagen,carrito})
             mail("registro",saveUser)
             done(null,saveUser)
+            
         }catch(err){
             logger.error(`error al registar usuario : ${err}`)
         }
@@ -32,7 +33,6 @@ class UsuarioDaoMongo extends ContenedorMongo {
     login = async (username, password,done) =>{
         try{
             const user = await this.db.findOne({username})
-            
             if(!user) return done(null,false)
             validatePass(password,user.password) ? done(null,user) : done(null,false)
         }catch(err){
@@ -51,7 +51,7 @@ class UsuarioDaoMongo extends ContenedorMongo {
             const data = await this.db.findOne({username:user})
             return data 
         }catch(err){
-            console.log(err)
+            logger.error(`ni se encontreo el usario por su nombre`)
         }
     }
 

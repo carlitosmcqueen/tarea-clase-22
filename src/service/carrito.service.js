@@ -51,19 +51,24 @@ export const POSTPRODUCTACTIVE = async (req, res) => {
         const superId = dataInfo.carrito[0]._id
         const productoCarrito = await productosDao.getById(id_producto);
         const data = await carritoDao.addProduct(superId, productoCarrito)
-        return data
+        res.status(200).send(data)
     }catch(e){
         res.status(404).send(e)
     }
 }
 
 export const DELETEPRODUCTACTIVE = async (req, res) => {
-    const {id_producto} = req.params
-    const dataInfo = await usuariosDao.IdUser(req.session.user)
-    const superId = dataInfo.carrito[0]._id
-    const productoCarrito = await productosDao.getById(id_producto)
-    const data = await carritoDao.deleteProdById(superId,productoCarrito)
-    return data
+    try{
+        const {id_producto} = req.params
+        const dataInfo = await usuariosDao.IdUser(req.session.user)
+        const superId = dataInfo.carrito[0]._id
+        const productoCarrito = await productosDao.getById(id_producto)
+        const data = await carritoDao.deleteProdById(superId,productoCarrito)
+        res.status(200).send(data)
+    }catch(e){
+
+    }
+    
 }
 
 export const PUTCART = async (req, res) => {
@@ -82,7 +87,6 @@ export const DELETEPRODUCT = async (req, res) =>{
     try {
         const { id, id_prod } = req.params;
         const productoCarrito = await productosDao.getById(id_prod)
-        
         await carritoDao.deleteProdById(id, productoCarrito);
         res.status(200).send("Producto Eliminado");
     } catch (err) {

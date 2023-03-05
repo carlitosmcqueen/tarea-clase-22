@@ -24,9 +24,13 @@ export const GETbyID = async (req, res) => {
 }
 
 export const GETmisCompras = async (req, res) => {
-    const user = req.session.user
-    const data = await compraDao.getByUser(user)
-    res.send(data)
+    try{
+        const user = req.session.user
+        const data = await compraDao.getByUser(user)
+        res.status(200).send(data)
+    }catch(err){
+        res.status(404).send(err)
+    }
 
 }
 export const POSTCOMPRA = async (req, res) => {
@@ -36,15 +40,19 @@ export const POSTCOMPRA = async (req, res) => {
         const ID = id.id
         const prod = id.carrito[0]._id
         const carritoProductos = await carritoDao.getById(prod)
+        const data =await compraDao.crearCompra(req.session.user,ID,carritoProductos.productos,domicilio);
+        res.status(200).send(data);
+        await carritoDao.deleteAllProducts(prod)
 
-        if (carritoProductos.productos = []){
-            res.status(500).send("no hay productos en el carrito")
-        }else{
-            const data =await compraDao.crearCompra(req.session.user,ID,carritoProductos.productos,domicilio);
-            await carritoDao.deleteAllProducts(prod)
-            res.status(200).send(data);
-        }
-        
+        // console.log(carritoProductos)
+
+        // if (carritoProductos.productos.length = 0){
+        //     res.status(500).send("no hay productos en el carrito")
+        // }else{
+        //   const data =await compraDao.crearCompra(req.session.user,ID,carritoProductos.productos,domicilio);
+        //   res.status(200).send(data);
+        //    await carritoDao.deleteAllProducts(prod)
+        // }
     } catch (err) {
         res.status(404).send(err);
     }
@@ -53,9 +61,9 @@ export const DELETECOMPRA = async (req, res) => {
     try{
         const {id} = req.params
         await compraDao.deleteCompra(id)
-        return `la compra ${id} fue eleminado exitosamente`
+        res.status(200).send(`la compra ${id} fue eleminada correctamente`)
     }catch(err){
-        console.log(`error al borrar el carrito : ${err}`)
+        res.status(404).send(err)
     }
 }
 
