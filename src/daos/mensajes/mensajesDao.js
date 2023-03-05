@@ -11,7 +11,6 @@ class mensajesDaoMongo extends ContenedorMongo{
     }
     saveMsjs = async (msj)=>{
         try {
-            
             const result = await this.db.create(msj);
             return result
         } catch (error) {

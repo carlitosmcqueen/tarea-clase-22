@@ -11,14 +11,16 @@ class UsuarioDaoMongo extends ContenedorMongo {
             edad:Number,
             telefono:String,
             imagen:String,
+            carrito:Array,
+            isAdmin: {type: Boolean, default: false, required: true},
         });
     }
-    register = async (req,username,password,done) => {
+    register = async (req,username,password,carrito,done) => {
         try{
             const {edad,telefono,imagen} = req.body
             const user = await this.db.findOne({username})
             if(user) return done(null,false)
-            const saveUser = await this.db.create({username,password: passHashed(password),edad,telefono,imagen})
+            const saveUser = await this.db.create({username,password: passHashed(password),edad,telefono,imagen,carrito})
             mail("registro",saveUser)
             done(null,saveUser)
         }catch(err){
@@ -44,6 +46,15 @@ class UsuarioDaoMongo extends ContenedorMongo {
             logger.error("error al deserialiar")
         }
     }
+    IdUser = async (user)=>{
+        try{
+            const data = await this.db.findOne({username:user})
+            return data 
+        }catch(err){
+            console.log(err)
+        }
+    }
+
 }
 
 export default UsuarioDaoMongo;

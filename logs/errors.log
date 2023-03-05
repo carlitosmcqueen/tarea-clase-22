@@ -7,3 +7,162 @@
 [2023-02-28T01:02:15.681] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
 [2023-02-28T01:02:42.535] [ERROR] default - error al guardar archivo: ValidationError: category: Path `category` is required.
 [2023-02-28T14:30:55.672] [ERROR] default - error al guardar archivo: ValidationError: title: Path `title` is required., price: Path `price` is required., thumbnail: Path `thumbnail` is required., description: Path `description` is required., category: Path `category` is required.
+[2023-02-28T15:21:35.526] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-01T13:35:15.109] [ERROR] default - error al borrar por su id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T13:35:27.154] [ERROR] default - error al borrar por su id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T13:35:45.725] [ERROR] default - error al borrar por su id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T13:49:44.988] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T13:50:13.589] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T14:25:48.846] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-02T15:22:08.956] [ERROR] default - error al borrar producto del carrito: TypeError: Cannot read properties of undefined (reading 'cant')
+[2023-03-02T22:45:43.430] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-02T23:17:02.395] [ERROR] default - error al crear compra: ValidationError: user: Path `user` is required.
+[2023-03-02T23:19:04.440] [ERROR] default - error al crear compra: ValidationError: user: Path `user` is required.
+[2023-03-02T23:31:51.642] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "user" (type string) at path "_id" for model "productos"
+[2023-03-03T17:39:27.531] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T17:53:06.020] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T17:53:32.145] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T17:55:27.587] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T19:47:52.131] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T19:53:17.380] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T19:55:56.789] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T19:56:28.604] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T19:57:26.452] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T19:57:35.301] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T19:59:40.506] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T20:00:05.677] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:06.453] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:06.721] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:49.645] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:50.696] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:51.072] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:01:04.382] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:03:24.680] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T20:03:59.484] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.024] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.339] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.573] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.770] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.942] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.109] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.273] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.409] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.546] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.698] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.851] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.985] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-04T14:39:53.245] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:24.875] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:26.043] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:44.031] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:44.767] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:58.273] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:23.414] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:23.919] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:39.813] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:40.856] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:02.507] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:22.806] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:23.709] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:24.364] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:24.541] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:24.726] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:24.930] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:58.084] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:58.637] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:43:13.335] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:44:15.697] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:44:16.623] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:44:16.819] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:08.649] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.216] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.401] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.553] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.696] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.822] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.985] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:10.118] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:56.684] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:57.440] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:57.629] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:57.824] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:23.076] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:23.643] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:23.841] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:24.018] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:24.203] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:47:08.053] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "productos"
+[2023-03-04T14:47:08.897] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "productos"
+[2023-03-04T14:47:09.373] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "productos"
+[2023-03-04T14:48:34.166] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:49:02.380] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:49:03.012] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:49:03.239] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:49:51.043] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:49:52.405] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:49:52.761] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:49:53.006] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:51:45.946] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:51:47.089] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:51:47.334] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:53:36.646] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:53:55.243] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:22.814] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:40.514] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.244] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.423] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.570] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.709] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.849] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.980] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:57:00.911] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:57:26.475] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:59:58.211] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:59:58.960] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:59:59.150] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:17.342] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:34.422] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:35.676] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:36.276] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:36.693] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:38.030] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:41.269] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:41.778] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:41.971] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:42.110] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:55.346] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "productos"
+[2023-03-04T15:00:56.336] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "productos"
+[2023-03-04T15:00:56.550] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "productos"
+[2023-03-04T15:00:56.701] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:03.278] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:04.031] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:04.300] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:30.831] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:31.415] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:31.999] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:06:02.213] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:07:27.859] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:07:31.965] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:08:28.744] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:09:39.644] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:10:35.198] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T17:44:18.863] [ERROR] default - error al borrar el carrito : CastError: Cast to ObjectId failed for value "63f7c1a719a883431a36ec20asdasd" (type string) at path "_id" for model "compra"
+[2023-03-04T19:54:37.129] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:02:55.681] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:03:12.434] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:04:48.643] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:06:23.924] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:06:53.849] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:07:54.942] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:10:02.100] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:10:38.116] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:11:08.645] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:13:36.813] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:14:40.721] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:23:40.841] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:24:39.461] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:33:50.953] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:47:05.266] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:54:05.745] [ERROR] default - error al registar usuario : ValidationError: isAdmin: Path `isAdmin` is required.
+[2023-03-04T20:55:07.724] [ERROR] default - error al registar usuario : ValidationError: isAdmin: Path `isAdmin` is required.
+[2023-03-04T20:55:37.454] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined

@@ -9,5 +9,6 @@ export const GetMessage = async (req, res) => {
 export const GetMessageUser = async (req, res) => {
     const mail = req.session.user
     const data = await mensajesDao.getByUser(mail)
-    res.render("main",{layout:"misMensajes",mensajes: data,user: req.session.user})
+    
+    res.render("main",{layout:"misMensajes",mensajes: data, user:req.session.user})
 }

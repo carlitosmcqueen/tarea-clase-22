@@ -509,3 +509,369 @@
 [2023-02-28T14:37:03.021] [WARN] default - Failed Requist GET at /favicon.ico
 [2023-02-28T14:37:04.858] [WARN] default - Failed Requist GET at /favicon.ico
 [2023-02-28T14:37:10.974] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:20:49.210] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:20:50.946] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:20:57.248] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:20:59.297] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:11.657] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:13.708] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:16.035] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:19.107] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:20.565] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:21.408] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:23.486] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:24.262] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:21:35.526] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-02-28T15:22:17.223] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:22:22.425] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T15:46:28.864] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-02-28T15:46:40.092] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-02-28T17:18:42.061] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-02-28T17:23:47.241] [WARN] default - Failed Requist GET at /chat,mnjkhj.kl
+[2023-02-28T17:23:47.300] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T17:26:03.864] [WARN] default - Failed Requist GET at /chat,mnjkhj.kl
+[2023-02-28T17:26:03.896] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T17:26:22.813] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-02-28T17:26:29.239] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T00:24:12.619] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T00:24:45.700] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T00:27:24.017] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T00:27:41.230] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T00:27:42.160] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T00:28:27.531] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T13:34:20.870] [WARN] default - Failed Requist DELETE at /api/productos
+[2023-03-01T13:35:15.109] [ERROR] default - error al borrar por su id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T13:35:27.154] [ERROR] default - error al borrar por su id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T13:35:45.725] [ERROR] default - error al borrar por su id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T13:48:35.667] [WARN] default - Failed Requist POST at /api/productos/2
+[2023-03-01T13:49:44.988] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T13:50:13.589] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T14:25:48.846] [ERROR] default - error al actualizar por id: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-03-01T14:52:00.619] [WARN] default - Failed Requist POST at /api/carritos
+[2023-03-01T15:15:54.216] [WARN] default - Failed Requist DELETE at /api/carrito/63ff92f6b5c9fc4141e0e485
+[2023-03-01T15:16:14.879] [WARN] default - Failed Requist DELETE at /api/carrito/63ff92f6b5c9fc4141e0e485
+[2023-03-01T18:17:54.320] [WARN] default - Failed Requist GET at /api/carrito/1/productos/2
+[2023-03-01T18:28:08.614] [WARN] default - Failed Requist GET at /api/carrito/1/productos/1
+[2023-03-01T18:33:11.206] [WARN] default - Failed Requist GET at /api/carrito/1/productos/2
+[2023-03-01T18:36:58.837] [WARN] default - Failed Requist GET at /api/carrito/1/productos/2
+[2023-03-01T18:37:24.419] [WARN] default - Failed Requist GET at /api/carrito/1/productos/1
+[2023-03-01T18:48:00.188] [WARN] default - Failed Requist POST at /api/carrito/1/productos/
+[2023-03-01T19:57:58.450] [WARN] default - Failed Requist GET at /chat/mai%C3%B1
+[2023-03-01T19:57:58.561] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T19:58:01.215] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T19:58:50.990] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T19:58:52.288] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T19:59:18.310] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T19:59:43.967] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T19:59:44.573] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T19:59:44.775] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T19:59:45.357] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T19:59:49.702] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:00:19.250] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:00:20.684] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:01:08.484] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:01:09.953] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:01:43.709] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:01:45.623] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:02:29.993] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:02:30.752] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:03:00.280] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:03:01.029] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:03:02.077] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:03:03.603] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:04:09.543] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:06:09.235] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:06:48.759] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:06:54.557] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:32:46.116] [WARN] default - Failed Requist GET at /chat/css/style.css
+[2023-03-01T20:33:18.713] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-01T20:37:04.640] [WARN] default - Failed Requist GET at /api/productos/category/tuberculo
+[2023-03-02T15:19:00.226] [WARN] default - Failed Requist GET at /api/carrito/63f7cdb43c3dcca02c440c6f/productos/63bb2c6c3a0dace2b76929bd
+[2023-03-02T15:22:08.956] [ERROR] default - error al borrar producto del carrito: TypeError: Cannot read properties of undefined (reading 'cant')
+[2023-03-02T22:45:43.430] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-02T23:17:02.395] [ERROR] default - error al crear compra: ValidationError: user: Path `user` is required.
+[2023-03-02T23:18:56.991] [WARN] default - Failed Requist POST at /
+[2023-03-02T23:19:04.440] [ERROR] default - error al crear compra: ValidationError: user: Path `user` is required.
+[2023-03-02T23:20:19.209] [WARN] default - Failed Requist POST at /
+[2023-03-02T23:22:47.306] [WARN] default - Failed Requist POST at /api/compra/64015111700e16bd3bdd4dae
+[2023-03-02T23:23:06.980] [WARN] default - Failed Requist POST at /api/compra/64015111700e16bd3bdd4dae
+[2023-03-02T23:31:48.264] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-02T23:31:51.642] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "user" (type string) at path "_id" for model "productos"
+[2023-03-02T23:31:51.868] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-02T23:32:24.012] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-02T23:32:29.840] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-02T23:33:29.932] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-02T23:33:44.230] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T00:10:23.948] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T00:13:45.541] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:16:03.757] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:18:21.759] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:19:14.211] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:19:43.286] [WARN] default - Failed Requist POST at /api/compras
+[2023-03-03T00:20:15.502] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:20:29.191] [WARN] default - Failed Requist GET at /api/compras
+[2023-03-03T00:21:09.777] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:21:18.501] [WARN] default - Failed Requist GET at /aoi/compra
+[2023-03-03T00:23:23.742] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:24:12.596] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:24:16.507] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:25:59.817] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:26:59.802] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:28:32.876] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:29:03.231] [WARN] default - Failed Requist POST at /api/compras
+[2023-03-03T00:29:59.860] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:31:24.774] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:32:27.897] [WARN] default - Failed Requist POST at /
+[2023-03-03T00:33:34.650] [WARN] default - Failed Requist POST at /
+[2023-03-03T04:07:23.182] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T04:07:49.289] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T04:08:05.849] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T17:39:27.531] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T17:53:06.020] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T17:53:32.145] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T17:55:27.587] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T19:41:44.494] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T19:41:57.608] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T19:46:37.153] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T19:46:49.168] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T19:47:52.131] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T19:53:17.380] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T19:55:56.789] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T19:56:04.985] [WARN] default - Failed Requist POST at /api/carrito/64027a5d56063bee77c3f01d/producto/63fd7d1963d775928e2b2b5c
+[2023-03-03T19:56:28.604] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T19:57:26.452] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T19:57:35.301] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T19:59:40.506] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T20:00:05.677] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:06.453] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:06.721] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:49.645] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:50.696] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:00:51.072] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:01:04.382] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:03:24.680] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-03T20:03:59.484] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.024] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.339] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.573] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.770] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:01.942] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.109] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.273] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.409] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.546] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.698] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.851] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T20:04:02.985] [ERROR] default - error al añadir producto al carrito: TypeError: Cannot read properties of null (reading 'productos')
+[2023-03-03T23:02:56.368] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:03:17.578] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:06:39.520] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:06:56.447] [WARN] default - Failed Requist GET at /api/productos/data/user
+[2023-03-03T23:06:56.611] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:07:04.152] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:07:12.572] [WARN] default - Failed Requist GET at /api/productos/data/user
+[2023-03-03T23:07:12.776] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:07:26.001] [WARN] default - Failed Requist GET at /user/data
+[2023-03-03T23:07:26.197] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:07:34.089] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:08:00.318] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:08:34.272] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:08:51.895] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:09:37.725] [WARN] default - Failed Requist GET at //api/productos/user/data
+[2023-03-03T23:09:37.879] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:09:42.368] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-03T23:11:45.972] [WARN] default - Failed Requist POST at /
+[2023-03-03T23:12:01.262] [WARN] default - Failed Requist POST at /
+[2023-03-03T23:12:14.308] [WARN] default - Failed Requist POST at /loginError
+[2023-03-03T23:12:23.522] [WARN] default - Failed Requist POST at /
+[2023-03-03T23:17:23.975] [WARN] default - Failed Requist POST at /
+[2023-03-03T23:17:42.992] [WARN] default - Failed Requist GET at /api/carrito/producto/63fd7d1963d775928e2b2b5c
+[2023-03-03T23:18:08.869] [WARN] default - Failed Requist GET at /api/carrito/producto/63fd7d1963d775928e2b2b5c
+[2023-03-03T23:20:37.073] [WARN] default - Failed Requist POST at /
+[2023-03-04T00:22:17.884] [WARN] default - Failed Requist POST at /
+[2023-03-04T00:53:33.447] [WARN] default - Failed Requist POST at /
+[2023-03-04T00:53:37.280] [WARN] default - Failed Requist POST at /
+[2023-03-04T00:56:06.697] [WARN] default - Failed Requist POST at /
+[2023-03-04T00:58:14.825] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:02:34.555] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:03:31.284] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:05:17.451] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:10:51.069] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:11:04.595] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:11:41.066] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:12:12.203] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:12:40.492] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:14:14.540] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:35:36.257] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:35:52.732] [WARN] default - Failed Requist POST at /
+[2023-03-04T01:57:51.005] [WARN] default - Failed Requist POST at /
+[2023-03-04T03:23:57.204] [WARN] default - Failed Requist POST at /
+[2023-03-04T03:25:19.523] [WARN] default - Failed Requist POST at /
+[2023-03-04T14:39:41.246] [WARN] default - Failed Requist POST at /
+[2023-03-04T14:39:53.245] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:24.875] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:26.043] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:44.031] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:44.767] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:40:58.273] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:23.414] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:23.919] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:39.813] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:40.856] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:41:47.670] [WARN] default - Failed Requist POST at /
+[2023-03-04T14:42:02.507] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:22.806] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:23.709] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:24.364] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:24.541] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:24.726] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:24.930] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:58.084] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:42:58.637] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:43:13.335] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:44:15.697] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:44:16.623] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:44:16.819] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:08.649] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.216] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.401] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.553] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.696] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.822] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:09.985] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:10.118] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:56.684] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:57.440] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:57.629] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:45:57.824] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:23.076] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:23.643] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:23.841] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:24.018] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:46:24.203] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:47:08.053] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "productos"
+[2023-03-04T14:47:08.897] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "productos"
+[2023-03-04T14:47:09.373] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "productos"
+[2023-03-04T14:48:34.166] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:49:02.380] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:49:03.012] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:49:03.239] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:49:51.043] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:49:52.405] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:49:52.761] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:49:53.006] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:51:45.946] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:51:47.089] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:51:47.334] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T14:53:36.646] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "misOrdenes" (type string) at path "_id" for model "compra"
+[2023-03-04T14:53:36.826] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T14:53:55.243] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:53:55.408] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T14:56:22.814] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:22.852] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T14:56:40.514] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.244] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.423] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.570] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.709] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.849] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:56:41.980] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:57:00.911] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:57:26.475] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:59:58.211] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:59:58.960] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T14:59:59.150] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:17.342] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:34.422] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:35.676] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:36.276] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:36.693] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:38.030] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "kj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:41.269] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:41.778] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:41.971] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:42.110] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "compra"
+[2023-03-04T15:00:49.771] [WARN] default - Failed Requist GET at /api/user/holajj
+[2023-03-04T15:00:55.346] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "productos"
+[2023-03-04T15:00:56.336] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "productos"
+[2023-03-04T15:00:56.550] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "productos"
+[2023-03-04T15:00:56.701] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "holajj" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:03.278] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:04.031] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:04.300] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:27.538] [WARN] default - Failed Requist POST at /api/productos/hola
+[2023-03-04T15:03:30.831] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:31.415] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:03:31.999] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:05:05.504] [WARN] default - Failed Requist GET at /mensajes
+[2023-03-04T15:06:02.213] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "productos"
+[2023-03-04T15:07:27.859] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:07:27.894] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:07:31.965] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:07:31.996] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:08:21.379] [WARN] default - Failed Requist GET at /api/compra/hola/user
+[2023-03-04T15:08:21.541] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:08:26.769] [WARN] default - Failed Requist GET at /api/compra/hola/user
+[2023-03-04T15:08:26.809] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:08:28.744] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:08:28.779] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:09:39.644] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:09:39.681] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:09:57.760] [WARN] default - Failed Requist GET at /api/productos/hola/user
+[2023-03-04T15:10:32.151] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:10:35.198] [ERROR] default - error al obtener el dato por su id: CastError: Cast to ObjectId failed for value "hola" (type string) at path "_id" for model "compra"
+[2023-03-04T15:10:35.238] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:23:03.988] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:23:23.165] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:24:04.676] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:24:05.315] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:24:17.345] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:25:25.344] [WARN] default - Failed Requist POST at /loginError
+[2023-03-04T15:25:51.782] [WARN] default - Failed Requist POST at /
+[2023-03-04T15:27:27.267] [WARN] default - Failed Requist GET at /api/compras
+[2023-03-04T15:48:02.463] [WARN] default - Failed Requist POST at /
+[2023-03-04T15:48:51.851] [WARN] default - Failed Requist POST at /api/compra/misCompras/user
+[2023-03-04T15:49:07.570] [WARN] default - Failed Requist POST at /api/compra/misCompras/user
+[2023-03-04T15:49:08.067] [WARN] default - Failed Requist POST at /api/compra/misCompras/user
+[2023-03-04T15:49:08.251] [WARN] default - Failed Requist POST at /api/compra/misCompras/user
+[2023-03-04T15:49:08.444] [WARN] default - Failed Requist POST at /api/compra/misCompras/user
+[2023-03-04T15:49:19.414] [WARN] default - Failed Requist POST at /
+[2023-03-04T15:49:24.457] [WARN] default - Failed Requist POST at /api/compra/misCompras/user
+[2023-03-04T15:49:36.483] [WARN] default - Failed Requist POST at /api/compra//misCompras/user
+[2023-03-04T15:49:51.698] [WARN] default - Failed Requist GET at /favicon.ico
+[2023-03-04T15:50:09.257] [WARN] default - Failed Requist POST at /
+[2023-03-04T15:53:37.955] [WARN] default - Failed Requist POST at /
+[2023-03-04T17:36:49.622] [WARN] default - Failed Requist DELETE at /api/carrito/64027a5d56063bee77c3f01d
+[2023-03-04T17:38:51.251] [WARN] default - Failed Requist DELETE at /api/compra/63f135f53449eccbb8534eec
+[2023-03-04T17:44:18.863] [ERROR] default - error al borrar el carrito : CastError: Cast to ObjectId failed for value "63f7c1a719a883431a36ec20asdasd" (type string) at path "_id" for model "compra"
+[2023-03-04T17:45:05.847] [WARN] default - Failed Requist DELETE at /api/compra/63f7c21b8931632a6736074f
+[2023-03-04T17:45:40.636] [WARN] default - Failed Requist DELETE at /api/compra/63f7c21b8931632a6736074f
+[2023-03-04T19:13:10.310] [WARN] default - Failed Requist POST at /
+[2023-03-04T19:54:26.725] [WARN] default - Failed Requist POST at /registerError
+[2023-03-04T19:54:37.129] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T19:58:01.707] [WARN] default - Failed Requist POST at /
+[2023-03-04T19:58:17.214] [WARN] default - Failed Requist POST at /user
+[2023-03-04T20:02:55.681] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:03:12.434] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:04:48.643] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:05:26.439] [WARN] default - Failed Requist POST at /registerError
+[2023-03-04T20:06:23.924] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:06:53.849] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:07:54.942] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:10:02.100] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:10:38.116] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:11:08.645] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:13:36.813] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:14:40.721] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:23:40.841] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:24:12.363] [WARN] default - Failed Requist POST at /registerError
+[2023-03-04T20:24:18.911] [WARN] default - Failed Requist POST at /registerError
+[2023-03-04T20:24:27.488] [WARN] default - Failed Requist POST at /registerError
+[2023-03-04T20:24:39.461] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:31:31.051] [WARN] default - Failed Requist POST at /regis
+[2023-03-04T20:33:40.397] [WARN] default - Failed Requist POST at /registerError
+[2023-03-04T20:33:50.953] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:47:05.266] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined
+[2023-03-04T20:54:05.745] [ERROR] default - error al registar usuario : ValidationError: isAdmin: Path `isAdmin` is required.
+[2023-03-04T20:55:07.724] [ERROR] default - error al registar usuario : ValidationError: isAdmin: Path `isAdmin` is required.
+[2023-03-04T20:55:37.454] [ERROR] default - error al registar usuario : ReferenceError: subject is not defined

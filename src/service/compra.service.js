@@ -1,7 +1,6 @@
 import daos from '../daos/index.js';
-import { createTransport } from 'nodemailer';
 
-const {compraDao,carritoDao} = await daos
+const {compraDao,carritoDao,usuariosDao} = await daos
 
 export const GET = async (req,res) => {
     try{
@@ -23,32 +22,40 @@ export const GETbyID = async (req, res) => {
         res.status(404).send(err);
     }
 }
+
+export const GETmisCompras = async (req, res) => {
+    const user = req.session.user
+    const data = await compraDao.getByUser(user)
+    res.send(data)
+
+}
 export const POSTCOMPRA = async (req, res) => {
     try {
-        const data =await compraDao.crearCompra();
-        res.status(200).send(data);
-    } catch (err) {
-        res.status(404).send(err);
+        const {domicilio} = req.body
+        const id = await usuariosDao.IdUser(req.session.user)
+        const ID = id.id
+        const prod = id.carrito[0]._id
+        const carritoProductos = await carritoDao.getById(prod)
 
-    }
-}
-
-export const POSTCARRITOinCOMPRA = async (req, res) => {
-    try {
-        const {
-            id,
-            id_carrito
-        } = req.params;
-        const carritoCompra = await carritoDao.getById(id_carrito);
-        const productosCarrito = carritoCompra.productos
-        const data =await compraDao.llenarCompra(id, carritoCompra)
-
-
-        res.status(200).send(data)
+        if (carritoProductos.productos = []){
+            res.status(500).send("no hay productos en el carrito")
+        }else{
+            const data =await compraDao.crearCompra(req.session.user,ID,carritoProductos.productos,domicilio);
+            await carritoDao.deleteAllProducts(prod)
+            res.status(200).send(data);
+        }
         
     } catch (err) {
         res.status(404).send(err);
-
+    }
+}
+export const DELETECOMPRA = async (req, res) => {
+    try{
+        const {id} = req.params
+        await compraDao.deleteCompra(id)
+        return `la compra ${id} fue eleminado exitosamente`
+    }catch(err){
+        console.log(`error al borrar el carrito : ${err}`)
     }
 }
 

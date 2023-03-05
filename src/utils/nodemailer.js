@@ -5,7 +5,7 @@ dotenv.config()
 import logger from "../../logs.js"
 
 function mail(tipo,datos){
-    let getEmail, sujeto, mensaje
+    let getEmail
     if (tipo == "registro"){
         
         getEmail = datos.username,
@@ -17,6 +17,19 @@ function mail(tipo,datos){
         // enviar()
     }
 
+    if(tipo == "compra"){
+        const productos = datos.productos
+        const productosComprados = productos.forEach((element) => `Usted a comprado : ${element.cant}, del producto ${element.title}`);
+        getEmail = datos.user,
+        subject= "Se a realizado una compra",
+        html = `Gracias por su compra ${datos.user};
+        realizada el ${datos.timestamp}
+        ----------------------------------------------------------------
+        ` + productosComprados
+        
+        //enviar()
+
+    }
     async function enviar(){
         const transporter = createTransport({
             host:"smtp.ethereal.email",
@@ -36,14 +49,11 @@ function mail(tipo,datos){
 
         try{
             const info = await transporter.sendMail(opts)
-            console.log(info)
+
         }catch(e){
             console.error(e)
         }
-
     }
-    
-
 }
 
 export default mail

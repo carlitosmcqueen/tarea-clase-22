@@ -1,64 +1,33 @@
 import express from 'express'
 import { Router } from 'express'
-
 //nuevo intento 
+
 import passport from '../utils/passport.js'
+import * as UsuariosService from "../service/usuario.service.js";
 
-//import twilio from 'twilio';
-import * as dotenv from "dotenv"
-dotenv.config()
-
-//twilio
-const accountSID = "AC68263a028427d38a73d6e3d832cdc0ae"
-const authToken = process.env.TWILIO
-//const client = twilio(accountSID, authToken)
 
 const router = Router()
 const app = express()
 app.use(express.json())
-
-
+app.use(express.urlencoded({ extended: true }))
 
 app.use(passport.initialize());
 app.use(passport.session());
-const PORT = process.env.PORT
 // ---------------------------------------------------------- para los loguearte  -------------------------------
-router.get("/login", async (req,res)=>{
-    res.render("main",{layout:"login",PORT:PORT})
-
-})
+router.get("/login", UsuariosService.GETLOGIN)
 
 router.post(
-    "/login",passport.authenticate("login", { failureRedirect: "/loginError" }),
-    async (req, res) => {
-        const { username } = req.body;
-        req.session.user = username;
-        res.redirect("/");
-    }
-);
+    "/login",passport.authenticate("login", { failureRedirect: "/loginError" }),UsuariosService.POSTLOGIN)
 
-router.get("/loginError", (req, res) => {
-    res.render("main",{layout:"loginError"});
-})
+router.get("/loginError", UsuariosService.LOGINERROR)
 
-router.get('/register', (req, res) => {
-    res.render('main', {layout: 'register'})
-})
+router.get('/register', UsuariosService.GETREGISTER)
   
-router.post('/register', passport.authenticate('signup', { failureRedirect: "/registerError" }), (req, res) => {
-    res.redirect("/login")
-});
+router.post('/register', passport.authenticate('signup', { failureRedirect: "/registerError" }), UsuariosService.POSTREGISTER);
 
-router.get("/registerError",(req, res)=>{
-    res.render("main",{layout:"registerError"})
-})
+router.get("/registerError",UsuariosService.REGISTERERROR)
   
-router.get('/logout' ,(req, res) => {
-    res.render('main', {layout: 'logout', user : req.session.user})
-    if(req.session){
-        req.session.destroy();
-    }
-})
+router.get('/logout' ,UsuariosService.LOGOUT)
 
 
 export {router as usuariosRouter}

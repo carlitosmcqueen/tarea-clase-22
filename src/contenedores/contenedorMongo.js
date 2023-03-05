@@ -3,6 +3,7 @@ import config from "../../mongoConfig.js";
 import logger from "../../logs.js";
 import ContenedorFactory from "./contenedorFactory.js";
 
+mongoose.set('strictQuery', false)
 
 await mongoose.connect(config.mongo.url, config.mongo.options)
 

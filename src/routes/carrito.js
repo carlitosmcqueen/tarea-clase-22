@@ -19,15 +19,14 @@ router.post("/",CarritoService.POSTCART);
 
 router.post("/:id/productos/:id_producto", CarritoService.POSTPRODUCT);
 
+router.post("/producto/:id_producto", CarritoService.POSTPRODUCTACTIVE)
+
+router.post("/producto/:id_producto", CarritoService.DELETEPRODUCTACTIVE)
 
 router.put("/:id",CarritoService.PUTCART)
 
-
 router.delete("/:id/productos/:id_prod", CarritoService.DELETEPRODUCT);
 
-
-
-router.post("/:id/carrito/:id_carrito", CarritoService.POSTCOMPRA)
 
 
 export { router as carritoRouter}

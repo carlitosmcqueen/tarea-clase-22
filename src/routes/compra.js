@@ -10,10 +10,14 @@ app.use(express.json())
 router.get('/',CompraService.GET)
 
 router.get("/:id",CompraService.GETbyID)
+router.get("/misCompras/user",CompraService.GETmisCompras)
 
 router.post("/", CompraService.POSTCOMPRA)
 
-router.post("/:id/carrito/:id_carrito", CompraService.POSTCARRITOinCOMPRA);
+
+router.delete("/:id",CompraService.DELETECOMPRA)
+
+
 
 export { router as compraRouter}
 

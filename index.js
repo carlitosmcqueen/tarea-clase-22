@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import session from "express-session";
 import passport from "passport";
 
-
 import sessionConfig from "./src/utils/session.js"
 import daos from "./src/daos/index.js"
 const {mensajesDao} = await daos
@@ -18,7 +17,6 @@ import logger from "./logs.js"
 
 const app = express();
 app.use(session(sessionConfig))
-
 
 //-------------SERVER-------------
 
@@ -90,7 +88,9 @@ app.get("/", (req,res)=>{
         console.log(error);
     }
 })
-
+app.get("/user",(req,res)=>{
+    console.log(req.user)
+})
 
 //todo lo que no cae arriba cae aca 
 app.all("*",(req,res)=>{

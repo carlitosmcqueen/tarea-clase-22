@@ -4,7 +4,6 @@ const config ={
         options : {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            
         }
     }
 
