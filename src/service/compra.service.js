@@ -1,4 +1,4 @@
-import daos from '../daos/index.js';
+import daos from '../daos/DaoFactory.js';
 
 const {compraDao,carritoDao,usuariosDao} = await daos
 
@@ -40,19 +40,18 @@ export const POSTCOMPRA = async (req, res) => {
         const ID = id.id
         const prod = id.carrito[0]._id
         const carritoProductos = await carritoDao.getById(prod)
-        const data =await compraDao.crearCompra(req.session.user,ID,carritoProductos.productos,domicilio);
-        res.status(200).send(data);
-        await carritoDao.deleteAllProducts(prod)
+        // const data =await compraDao.crearCompra(req.session.user,ID,carritoProductos.productos,domicilio);
+        // res.status(200).send(data);
+        // await carritoDao.deleteAllProducts(prod)
 
-        // console.log(carritoProductos)
+        if (carritoProductos.productos.length == 0){
+             res.status(500).send("no hay productos en el carrito")
+         }else{
+           const data =await compraDao.crearCompra(req.session.user,ID,carritoProductos.productos,domicilio)
 
-        // if (carritoProductos.productos.length = 0){
-        //     res.status(500).send("no hay productos en el carrito")
-        // }else{
-        //   const data =await compraDao.crearCompra(req.session.user,ID,carritoProductos.productos,domicilio);
-        //   res.status(200).send(data);
-        //    await carritoDao.deleteAllProducts(prod)
-        // }
+           res.status(200).send(data);
+            await carritoDao.deleteAllProducts(prod)
+        }
     } catch (err) {
         res.status(404).send(err);
     }

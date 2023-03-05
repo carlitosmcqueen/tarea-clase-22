@@ -1,10 +1,9 @@
-import daos from "../daos/index.js";
+import daos from "../daos/DaoFactory.js";
 const {productosDao} = await daos
 
 export const GET = async (req, res) => {
     try {
         const data = await productosDao.getAll()
-        console.log(req.session.user)
         res.status(200).send(data);        
     } catch (err) {
         res.status(404).send(err);

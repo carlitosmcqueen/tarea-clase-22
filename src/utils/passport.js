@@ -1,7 +1,7 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from 'passport-local'
 
-import daos from "../daos/index.js"
+import daos from "../daos/DaoFactory.js"
 const {usuariosDao,carritoDao} = await daos
 
 passport.use("signup", new LocalStrategy({passReqToCallback: true}, async (req,username,password,done)=> {

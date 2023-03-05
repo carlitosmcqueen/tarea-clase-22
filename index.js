@@ -3,30 +3,21 @@ import handlebars from "express-handlebars";
 import bodyParser from 'body-parser';
 import session from "express-session";
 import passport from "passport";
-
 import sessionConfig from "./src/utils/session.js"
-import daos from "./src/daos/index.js"
+import daos from "./src/daos/DaoFactory.js"
 const {mensajesDao} = await daos
-
 import * as dotenv from "dotenv"
 dotenv.config()
-
 import logger from "./logs.js"
-
-
-
+// APP
 const app = express();
 app.use(session(sessionConfig))
-
 //-------------SERVER-------------
-
-
 import { Server } from 'socket.io';
 import { createServer } from 'http';
 const httpServer = createServer(app); 
 const io = new Server(httpServer);
-
-
+//socket
 io.on("connection", async (socket) => {
     console.log("se conecto a chatSocket")
 
@@ -46,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"))
 
 
-
+//HBS
 const hbs= handlebars.engine({
     extname: "hbs",
     layoutsDir: "./views/layouts"
@@ -80,24 +71,19 @@ app.use((req, res, next) => {
 app.get("/", (req,res)=>{
     try{
         if (req.session.user){
-        res.render("main",{layout:"principal", user : req.session.user})
-    }else{
-        res.redirect("/login")
-    }
+            res.render("main",{layout:"principal", user : req.session.user})
+        }else{
+            res.redirect("/login")
+        }
     }catch (error) {
-        console.log(error);
+        logger.error(`erroe al ir a la ruta ${error}`)
     }
-})
-app.get("/user",(req,res)=>{
-    console.log(req.user)
 })
 
-//todo lo que no cae arriba cae aca 
 app.all("*",(req,res)=>{
     logger.warn(`Failed Requist ${req.method} at ${req.url}`)
-    res.send({error:true})
+    res.send({error:`no existe esa ruta`})
 })
-
 
 const PORT = process.env.PORT || 8080
 const server = httpServer.listen(PORT, () => {

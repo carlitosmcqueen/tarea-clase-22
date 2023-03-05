@@ -1,4 +1,4 @@
-import daos from "../daos/index.js";
+import daos from "../daos/DaoFactory.js";
 const {usuariosDao,mensajesDao} = await daos
 
 export const GetMessage = async (req, res) => {

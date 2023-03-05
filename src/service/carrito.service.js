@@ -1,4 +1,4 @@
-import daos from "../daos/index.js"
+import daos from "../daos/DaoFactory.js"
 const {carritoDao,productosDao,usuariosDao} = await daos
 import * as dotenv from "dotenv"
 

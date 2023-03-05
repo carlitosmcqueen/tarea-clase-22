@@ -15,16 +15,6 @@ const daos ={
             compraDao: new comprasDaoMongo(),
             mensajesDao: new mensajesDaoMongo(),
         }
-    },
-    FS: async()=>{
-        const {default: productosDaoFS} = await import("./productos/productosDaoFS.js")
-        const {default: carritoDaoFS} = await import("./carrito/carritoDaoFS.js")
-        const {default: mensajesDaoFS} = await import("./mensajes/mensajesDaoFS.js")
-        return{
-            productosDao: new productosDaoFS(),
-            carritoDao: new carritoDaoFS(),
-            mensajesDao: new mensajesDaoFS(),
-        }
     }
 }
 
